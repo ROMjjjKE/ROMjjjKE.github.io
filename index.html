@@ -1095,7 +1095,13 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
     modal.dataset.open='1'; document.body.style.overflow='auto'; modal.style.pointerEvents='auto';
   }
   function close(){modal.dataset.open='0'; document.body.style.overflow='';}
+  function storyVisible(){
+    const p=(document.querySelector('.stage')||{}).dataset;
+    const phase=p&&p.phase||'';
+    return phase==='story'||phase==='story-transition';
+  }
   function cardAt(x,y){
+    if(!storyVisible()) return null;
     return [...document.querySelectorAll('.service-card')].find(c=>{
       const r=c.getBoundingClientRect();
       return r.width>0 && x>=r.left && x<=r.right && y>=r.top && y<=r.bottom;
@@ -1104,7 +1110,8 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
   // сцена story перекрыта соседней секцией — ловим клик по координатам в capture-фазе
   document.addEventListener('click', e=>{
     if(e.target.closest('.svc-modal')) return;
-    const card = e.target.closest('.service-card') || cardAt(e.clientX,e.clientY);
+    if(e.target.closest('button,a,.final-nav,.project-nav,[data-dir],[role="button"]')) return;
+    const card = (storyVisible() && e.target.closest('.service-card')) || cardAt(e.clientX,e.clientY);
     if(card && card.dataset.svc){ e.stopPropagation(); e.preventDefault(); open(card.dataset.svc); }
   }, true);
   modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.svc-modal__close'))close();});
