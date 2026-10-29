@@ -6,7 +6,7 @@ export function createFinal(reduced){
  root.style.setProperty('--grain',getComputedStyle(document.querySelector('.story-viewport')).getPropertyValue('--grain'));
  const track=root.querySelector('.team-track');
  // studio-4 is already represented by the interior photo between Loren and Tom.
- const extras=GALLERY_IMAGES.filter(item=>item.group==='studio-photos'&&item.src!=='/assets/tornado/studio-4.webp');
+ const extras=[]; // SiteFast: в блоке команды только карточка основателя
  extras.forEach(item=>{const card=document.createElement('article');card.className='team-card';const image=new Image();image.dataset.deferSrc=item.src;image.alt='Life at garcy.studio';image.loading='eager';image.decoding='async';image.width=282;image.height=361;card.append(image);track.append(card);});
  const cards=[...root.querySelectorAll('.team-card')],pixels=cards.map(pixelCard);[copy,title].forEach(wrapWords);draggableStrip(root.querySelector('.team-strip'));
  let generation=0,timers=[],cleanups=[],frame,active=false,paused=reduced.matches;

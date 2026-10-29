@@ -30,7 +30,7 @@ const portraitImages = PORTRAITS.map((face, i) => {
 const portraitsReady = Promise.allSettled(portraitImages.map(image => image.decode()));
 let scenePortraits = [];
 function choosePortraits() {
-  // Each supplied row is a complete, balanced set. Shuffle within that row only.
+  // Each supplied row is a complete, balanced set. Перемешать within that row only.
   const row = Math.floor(Math.random()*4);
   const faces = PORTRAITS.slice(row*4,row*4+4);
   for (let i=faces.length-1;i>0;i--) {

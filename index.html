@@ -758,6 +758,35 @@ html[data-project].experience-booting:not(.experience-ready) .case-hero>*{visibi
 .floppy-label::after,.floppy-shutter::after{content:'';position:absolute;inset:0;border-radius:inherit;background:url('/assets/menu/noise.svg');opacity:.13;pointer-events:none}
 .floppy-edge-bottom{background:linear-gradient(0deg,#0009,transparent),var(--disk-edge);box-shadow:0 1px 2px color-mix(in srgb,var(--light) 30%,transparent)}
 .floppy-label{box-shadow:0 0 0 calc(4*var(--u)) #0002,inset 0 1px 0 #fff5,0 9px 24px color-mix(in srgb,var(--light) 12%,transparent)}
+
+/* ===== правки SiteFast: логотипы текстом, карточки услуг, команда ===== */
+.logo{display:inline-flex;align-items:center;height:15px}
+.logo-text{font-family:"Restart Soft","Unbounded",Arial,sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em;color:#fff;white-space:nowrap;text-transform:none}
+.entry-logo{width:auto!important;height:auto!important;overflow:visible!important}
+.entry-logo-text{position:relative;display:block;font-family:"Restart Soft","Unbounded",Arial,sans-serif;font-weight:600;font-size:clamp(28px,4.4vw,64px);line-height:1;letter-spacing:-.02em;color:#fff;white-space:nowrap;animation:logo-rise 1100ms cubic-bezier(.22,1,.36,1) both}
+.entry-logo-text .fill{position:absolute;inset:0;opacity:.18;clip-path:inset(0 calc(100% - var(--load-progress,0%)) 0 0)}
+.entry-logo-text .top{position:relative;z-index:2;clip-path:inset(0 calc(100% - var(--load-progress,0%)) 0 0)}
+/* заголовок момента: даём место, убираем обрезку курсива */
+.moment-title{width:auto!important;max-width:min(88vw,760px);font-size:clamp(20px,3.1vw,34px)!important;line-height:.94!important;text-align:center}
+.moment-line em{max-width:none!important;color:#fff}
+.for-ready .moment-line em{max-width:none!important;margin-right:.16em}
+.moment-words .moment-line>span{white-space:normal}
+/* логотипы клиентов убрать */
+.logo-wall{display:none!important}
+/* карточки услуг вместо отзывов */
+.testimonials{overflow:visible!important;height:auto!important;padding:0 5.58%!important}
+.story .testimonials{visibility:visible!important;opacity:1!important}
+.service-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%;padding-block:12px}
+.service-card{display:flex;flex-direction:column;justify-content:space-between;gap:18px;min-height:240px;padding:22px 20px;border:1px solid #ffffff1f;border-radius:12px;background:#0f0f0f;transition:border-color .25s,background .25s}
+.service-card:hover{border-color:#ffffff45;background:#151515}
+.service-card h3{font-family:"Restart Soft","Unbounded",Arial,sans-serif;font-weight:600;font-size:19px;line-height:1.15;letter-spacing:-.01em;color:#fff;margin:0}
+.service-card p{font-size:13.5px;line-height:1.45;color:#9a9a9a;margin:0}
+.service-card .price{font-family:"ABC Diatype Mono","JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;opacity:.75}
+@media(max-width:900px){.service-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.service-cards{grid-template-columns:1fr}}
+/* одна карточка основателя */
+.team-card{opacity:1!important}
+.floppy-logo-text{font-family:"Restart Soft",Arial,sans-serif;font-weight:600;font-size:12px;letter-spacing:-.01em;color:#4e5340;white-space:nowrap}
 </style>
     
     
@@ -774,7 +803,7 @@ html[data-project].experience-booting:not(.experience-ready) .case-hero>*{visibi
         <canvas class="entry-dither" aria-hidden="true"></canvas>
         <canvas class="entry-spotlight" aria-hidden="true"></canvas>
         <div class="entry-center">
-          <div class="entry-logo" role="img" aria-label="SiteFast.by"><img src="./assets/loader/logo.svg" alt="" /></div>
+          <div class="entry-logo" role="img" aria-label="SiteFast Studio"><span class="entry-logo-text"><span class="fill" aria-hidden="true">SiteFast Studio</span><span class="top">SiteFast Studio</span></span></div>
           <p class="entry-status" role="status">Готовим сцену</p>
           <div class="entry-actions" hidden>
             <button class="enter-sound" type="button" aria-label="Enter studio with analytics cookies and sound">
@@ -791,7 +820,7 @@ html[data-project].experience-booting:not(.experience-ready) .case-hero>*{visibi
         <p class="tornado-hint" aria-hidden="true">Тяните, чтобы смотреть · Скролл дальше</p><button class="moment-continue" type="button" aria-label="Дальше to portfolio" disabled>↓</button>
         <div class="tornado" aria-hidden="true"><div class="tornado-cards"></div></div>
         <h2 class="moment-title" aria-label="Мы делаем сайты, которые продают.">
-          <span class="moment-words" aria-hidden="true"><span>Мы делаем</span><span class="moment-line"><em>сайты</em><span>которые продают.</span></span></span>
+          <span class="moment-words" aria-hidden="true"><span>Мы делаем</span><span class="moment-line"><em>сайты,</em><span>которые продают.</span></span></span></span>
           <canvas class="headline-pixels" aria-hidden="true"></canvas>
         </h2>
       </section>
@@ -917,16 +946,16 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
 <section class="story" aria-label="Our approach and client stories" tabindex="0" aria-hidden="true" inert>
         <div class="story-runway"><div class="story-viewport">
           <div class="story-copy">
-            <p>Вы уже знаете, что <em>difference.</em><br>Между брендом, который подходит, и брендом, который задаёт правила.</p>
+            <p>Вы уже знаете: сайт либо приносит клиентов, либо просто есть.<br>Второго варианта в этом разговоре мы не рассматриваем.</p>
             <p>Сейчас ИИ рекомендует вас раньше, чем вы сказали хоть слово. Кто-то спрашивает, кому доверять и кого нанять. Вы хотите быть в этом списке. Но клик — только начало: если сайт не отвечает обещанию, клиент уходит.</p>
             <p>Побеждают те, кого цитируют, выбирают и советуют: когда человек заходит на сайт, он получает ровно то, что было обещано. И чуть больше.</p>
             <p>Вот что вам нужно: то, что останавливает на скролле, на улице, в разговоре.</p>
             <p>Играть по-крупному уже пора.<br>Средний уровень уже занят.</p>
           </div>
-          <h2 class="story-title" aria-label="Для тех who don’t want играть по-крупному."><span aria-hidden="true">Для тех</span><span class="story-middle" aria-hidden="true"><span>who</span><em class="story-insert">don’t</em><span class="story-want">want</span></span><span aria-hidden="true">играть по-крупному.</span></h2>
+          <h2 class="story-title" aria-label="Для тех, кто не хочет играть по-крупному."><span aria-hidden="true">Для тех, кто</span><span class="story-middle" aria-hidden="true"><span>не</span><em class="story-insert">хочет</em></span><span aria-hidden="true">играть по-крупному.</span></h2>
           <div class="logo-wall" role="group" aria-label="Selected clients"></div>
           <button class="story-continue section-continue" type="button" aria-label="Дальше to final screen">↓</button>
-          <div class="testimonials" tabindex="0" role="region" aria-label="Client testimonials. Drag or use left and right arrows."><div class="testimonial-track"><article class="testimonial text-testimonial supplied-testimonial" data-quote="andy-night-day"><div class="testimonial-copy"><h3>Разница между тем, что было, и тем, что стало, огромная.</h3><blockquote>Идею с эскиза они превратили в сайт лучше, чем я представлял.</blockquote></div><div class="person"><img src="/assets/testimonials/andy.webp" alt="" width="45" height="45" loading="lazy"><p>Энди Каруза<span>Директор по маркетингу</span><span>NachoNacho</span></p></div><p class="testimonial-tags">Брендинг<br>Дизайн сайта<br>Стратегия</p></article><article class="testimonial video-testimonial"><video data-person="lukas" muted loop playsinline preload="none" poster="/assets/testimonials/lukas-poster.webp" aria-hidden="true"><source src="/assets/testimonials/lukas-loop.mp4" type="video/mp4"></video><div class="reel-dither" aria-hidden="true"></div><button class="person video-play" type="button" data-testimonial="lukas" data-person="Лукаш Коваржик" aria-label="Смотреть Лукаш Коваржик's testimonial"><span class="play-square"><img src="/assets/testimonials/play.svg" alt="" width="45" height="45"><canvas class="play-pixels" width="90" height="90" aria-hidden="true"></canvas></span><span class="person-label">Лукаш Коваржик<span>CEO</span><span>Bohemian Research</span></span></button></article><article class="testimonial text-testimonial supplied-testimonial" data-quote="magdalena-brand"><div class="testimonial-copy"><h3>Новый сайт вывел нас на другой уровень.</h3><blockquote>Сайт помог подтвердить наш статус и собрать финансирование под долгие проекты.</blockquote></div><div class="person"><img src="/assets/testimonials/magdalena.webp" alt="" width="45" height="45" loading="lazy"><p>Магдалена Ольшанова<span>Руководитель проекта</span><span>Фонд</span></p></div><p class="testimonial-tags">Брендинг<br>Дизайн сайта</p></article><article class="testimonial video-testimonial"><video data-person="andy" muted loop playsinline preload="none" poster="/assets/testimonials/andy-poster.webp" aria-hidden="true"><source src="/assets/testimonials/andy-loop.mp4" type="video/mp4"></video><div class="reel-dither" aria-hidden="true"></div><button class="person video-play" type="button" data-testimonial="andy" data-person="Энди Каруза" aria-label="Смотреть Энди Каруза's testimonial"><span class="play-square"><img src="/assets/testimonials/play.svg" alt="" width="45" height="45"><canvas class="play-pixels" width="90" height="90" aria-hidden="true"></canvas></span><span class="person-label">Энди Каруза<span>Директор по маркетингу</span><span>NachoNacho</span></span></button></article><article class="testimonial text-testimonial supplied-testimonial" data-quote="martin-extra"><div class="testimonial-copy"><h3>Каждый раз получаем больше, чем заказывали.</h3><blockquote>Работа идёт гладко: в срок, аккуратно и по делу.</blockquote></div><div class="person"><img src="/assets/testimonials/martin.webp" alt="" width="45" height="45" loading="lazy"><p>Мартин Шетек<span>CEO</span><span>Resimo</span></p></div><p class="testimonial-tags">Дизайн сайта<br>UX</p></article><article class="testimonial text-testimonial supplied-testimonial" data-quote="michal-package"><div class="testimonial-copy"><h3>Получили всё в одном месте: сайт, тексты, аналитику. Это экономит месяцы.</h3><blockquote>Обсуждали не только макет, но и то, как клиенты реально выбирают. Получили больше, чем ожидали.</blockquote></div><div class="person"><img src="/assets/testimonials/michal.webp" alt="" width="45" height="45" loading="lazy"><p>Михаил Берёзин<span>Владелец продукта</span><span>Creative Dock</span></p></div><p class="testimonial-tags">UX<br>Дизайн приложения</p></article><article class="testimonial text-testimonial supplied-testimonial" data-quote="pavel-rebrand"><div class="testimonial-copy"><h3>Одна из лучших совместных работ, которые у нас были.</h3><blockquote>Обсуждали спокойно и по делу, можно было спорить и находить лучшее решение.</blockquote></div><div class="person"><img src="/assets/testimonials/pavel.webp" alt="" width="45" height="45" loading="lazy"><p>Павел Урбан<span>Директор по маркетингу ТЦ</span><span>CPI</span></p></div><p class="testimonial-tags">Брендинг<br>Стратегия</p></article><article class="testimonial text-testimonial supplied-testimonial" data-quote="lukas-growth"><div class="testimonial-copy"><h3>Сайт переделали так, что заявки выросли уже в первый месяц после запуска.</h3><blockquote>Нужна была быстрая обратная связь, и мы её получили. Результат вывел нас на новый уровень.</blockquote></div><div class="person"><img src="/assets/testimonials/lukas.webp" alt="" width="45" height="45" loading="lazy"><p>Лукаш Коваржик<span>CEO</span><span>Bohemian Research</span></p></div><p class="testimonial-tags">Брендинг<br>Дизайн сайта<br>UX</p></article></div></div>
+          <div class="testimonials" role="region" aria-label="Услуги SiteFast.by"><div class="testimonial-track" hidden></div><div class="service-cards"><article class="service-card"><h3>Сайты под ключ</h3><p>Структура, дизайн, тексты, вёрстка и запуск за 3 дня. Бесплатный макет до оплаты.</p><span class="price">от 450 BYN</span></article><article class="service-card"><h3>ИИ-агенты</h3><p>Приём заявок и запись 24/7. Каталог из 30+ готовых агентов, запуск за 2 недели.</p><span class="price">450 BYN · 200/мес</span></article><article class="service-card"><h3>Фирменный стиль</h3><p>Логотип, палитра, типографика и гайдлайн. Бренд, который узнают до названия.</p><span class="price">по задаче</span></article><article class="service-card"><h3>Сайт + агент под ключ</h3><p>Одна система: реклама, сайт, агент, аналитика. Один подрядчик вместо трёх.</p><span class="price">по задаче</span></article></div></div>
         </div></div>
       </section>
 
@@ -945,7 +974,7 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
 <h2 class="final-title">Самое надёжное,<br>что можно сделать сейчас, —<br>стать <em>заметным.</em></h2>
 <img class="final-joy" data-defer-src="./assets/final/joy.svg" alt="Сайты и ИИ-агенты для бизнеса">
 <address class="final-address"><strong>SiteFast.by</strong><br>Беларусь, работаем удалённо<br>Минск · Могилёв · вся Беларусь<br>УНП CB1649227</address><p class="final-copyright">© 2026 SiteFast.by</p>
-<div class="team-strip" tabindex="0" aria-label="О студии. Свайпайте или используйте стрелки."><div class="team-track"><article class="team-card"><img data-defer-src="./assets/final/loren.webp" alt="Роман Арсоба" loading="lazy" width="282" height="361"><p class="team-label">Основатель<span>Роман Арсоба</span><a href="mailto:roman@sitefast.by">roman@sitefast.by</a></p></article><article class="team-card"><img data-defer-src="./assets/final/interior.webp" alt="Inside garcy.studio" loading="lazy" width="282" height="361"></article><article class="team-card"><img data-defer-src="./assets/final/tom.webp" alt="Роман Арсоба" loading="lazy" width="282" height="361"><p class="team-label">Основатель<span>Роман Арсоба</span><a href="mailto:roman@sitefast.by">roman@sitefast.by</a></p></article><article class="team-card"><img data-defer-src="./assets/final/venca.webp" alt="Роман Арсоба" loading="lazy" width="282" height="361"><p class="team-label">Дизайн и разработка<span>Роман Арсоба</span><a href="mailto:roman@sitefast.by">roman@sitefast.by</a></p></article><article class="team-card"><img data-defer-src="./assets/final/terrace.webp" alt="Inside garcy.studio" loading="lazy" width="282" height="361"></article></div></div></section>
+<div class="team-strip" tabindex="0" aria-label="О студии. Свайпайте или используйте стрелки."><div class="team-track"><article class="team-card"><img data-defer-src="./assets/founder.png" alt="Роман, основатель SiteFast.by" loading="lazy" width="282" height="361" style="object-position:50% 35%"><p class="team-label">Основатель<span>Роман</span><a href="mailto:roman@sitefast.by">roman@sitefast.by</a></p></article></div></div></section>
       <p class="joy-label">Сайты и ИИ-агенты для бизнеса</p>
 
       <section class="opening" aria-label="Brands that get that text" tabindex="-1" inert>
@@ -965,7 +994,7 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
 
       <div class="spotlight" aria-hidden="true"></div>
       <header class="site-header" inert>
-        <a class="logo" href="./" aria-label="garcy.studio — replay intro"><img src="./assets/logo.svg" alt="garcy.studio" width="89" height="15" /></a>
+        <a class="logo" href="./" aria-label="SiteFast.by — на главную"><span class="logo-text">SiteFast.by</span></a>
         <div class="header-actions">
           <button class="profile-button" type="button" disabled aria-label="Studio navigation — coming later"><img src="./assets/controls/profile-square.svg" alt="" width="44" height="45" /></button>
           <button class="search-shortcut" type="button" disabled aria-label="Open studio search"><span class="shortcut-label"><img class="shortcut-command" src="./assets/controls/command.svg" alt="" width="11" height="11"><span class="shortcut-control" hidden>ctrl</span><span>K</span></span></button>
