@@ -1,0 +1,41 @@
+html,body{height:auto;min-height:100%;overflow:auto;overscroll-behavior:auto;color:#e7e7e7}
+.service-surface.stage{position:relative;inset:auto;margin:4px;min-height:calc(100dvh - 8px);background:linear-gradient(110deg,#262626,#000101 94%);overflow:hidden}
+.service-surface:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='white' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+.service-surface .site-header{position:absolute;opacity:1;visibility:visible;pointer-events:auto}
+.service-intro{padding:80px 5.6vw 0;min-height:485px;position:relative}
+.service-lead{width:400px;max-width:42%;font:500 19px/1.08 'Restart Soft';letter-spacing:-.04em;color:#9d9d9d}
+.service-lead>p{white-space:pre-line;margin:0}.service-lead .service-eyebrow{font:10px/1.3 var(--mono);text-transform:uppercase;letter-spacing:0;margin-bottom:20px;color:#ddd}
+.service-intro h1{font:600 25px/.95 'Restart Soft';letter-spacing:-.06em;text-transform:uppercase;text-align:center;width:300px;margin:30px auto 0;padding-bottom:35px}
+.service-intro h1 em{font-family:'Perfectly Nineties';font-style:italic;text-transform:none}
+.service-logos{display:flex;justify-content:space-between;align-items:center;gap:24px;margin:24px 5.6vw 76px;opacity:.6}
+.service-logos img{max-width:10%;max-height:40px;width:auto;object-fit:contain}
+.service-projects{display:flex;gap:4px;padding:0 2vw;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}
+.service-project{position:relative;flex:1 0 30%;min-width:0;aspect-ratio:458/498;border-radius:16px;overflow:hidden;color:white;text-decoration:none}
+.service-project>img{display:block;width:100%;height:100%;object-fit:cover}.service-project:after{content:'';position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#0009);pointer-events:none}
+.service-project>div{position:absolute;bottom:22px;left:20px;right:20px;display:flex;align-items:end;justify-content:space-between;gap:12px;z-index:1}
+.service-project h2{font:500 24px/1 'Restart Soft';letter-spacing:-.04em;margin:0}.service-project p{font:10px/1 var(--mono);text-transform:uppercase;text-align:right;margin:0}
+.service-process{min-height:420px;padding:65px 5.6vw 80px;display:flex;justify-content:space-between;gap:10vw}.service-process>div{align-self:end;max-width:390px}.service-process h2{font:600 24px/1 'Restart Soft';text-transform:uppercase;letter-spacing:-.06em}.service-process>p{max-width:289px;margin:0 8vw 0 0;color:#9d9d9d;font:500 14px/1.12 'Restart Soft';letter-spacing:-.04em}.service-process ul{padding:0;list-style:none;font:11px/1.5 var(--mono);color:#999}
+.service-testimonials{display:flex;gap:5px;padding:0 5.6vw 20px;overflow-x:auto;scrollbar-width:none;touch-action:pan-x pan-y;cursor:grab}.service-testimonials .testimonial{height:361px;flex:0 0 331px;opacity:1;transform:none}.service-quote{margin:20px;font:600 18px/1.08 'Restart Soft';letter-spacing:-.04em;text-transform:uppercase}.service-testimonials .person{max-width:90%}
+.service-closing{padding:110px 5.6vw 30px}.service-closing>p{max-width:640px;font:500 32px/1.05 'Restart Soft';letter-spacing:-.04em;color:#9d9d9d;margin:0 0 55px}.service-closing .case-return{margin:0}
+.service-related{display:flex;flex-wrap:wrap;gap:18px;padding:20px 5.6vw;font:12px var(--mono)}.service-related a{color:#aaa;text-decoration:none}.service-related a:hover{color:#ffff40}
+.service-footer{height:270px;overflow:hidden;text-align:center;position:relative}.service-footer>img{width:min(564px,75vw);height:auto;display:block;margin:25px auto 0}.service-footer>p{position:absolute;bottom:12px;left:25px;font:10px var(--mono)}
+.service-reveal{position:relative}.service-surface.menu-underlay{filter:brightness(.55)}
+@media(max-width:700px){.service-intro{padding:90px 24px 0;min-height:0}.service-lead{max-width:100%;width:auto;font-size:17px}.service-intro h1{margin-top:55px;font-size:25px;max-width:100%}.service-logos{margin:20px 24px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:25px}.service-logos img{max-width:100%;max-height:24px;margin:auto}.service-logos img:nth-child(n+9){display:none}.service-projects{padding:0 16px;gap:8px}.service-project{flex-basis:85%;scroll-snap-align:center}.service-project h2{font-size:22px}.service-project p{font-size:8px}.service-process{padding:50px 24px;min-height:0;flex-direction:column-reverse;gap:40px}.service-process>div{align-self:start}.service-process>p{max-width:100%;margin:0;font-size:16px;line-height:1.2}.service-testimonials{padding-inline:24px}.service-testimonials .testimonial{flex-basis:285px;height:340px}.service-closing{padding:65px 24px 30px}.service-closing>p{font-size:26px}.service-footer{height:190px}.service-related{padding:20px 24px}}
+
+@media(min-width:701px){.service-project{max-width:calc((100% - 8px)/3)}}
+.service-testimonials .text-testimonial .person{padding:2px 14px 2px 2px}
+
+.service-surface .site-header{position:fixed;inset:4px 4px auto;z-index:100}
+.service-process ul{text-transform:uppercase;font:8px/1.5 monospace;letter-spacing:0;color:#d0d0d0}
+.service-footer .joy-label{position:fixed;left:35px;bottom:19px;margin:0;font:8px/12px monospace;text-transform:uppercase;color:#d0d0d0;opacity:1}
+.service-footer>img{animation:joy-turn 45s linear infinite}
+.service-logos .logo-slot{height:60px;flex:1}
+.service-logos .logo-slot img{max-width:100%;max-height:40px}
+.service-project>img{will-change:transform}
+@media(max-width:700px){.service-logos .logo-slot{height:30px;display:block}.service-logos .logo-slot:nth-child(n+9){display:none}.service-logos .logo-slot img{max-height:24px}}
+@media(prefers-reduced-motion:reduce){.service-footer>img{animation:none}.service-project>img{will-change:auto}}
+@media(hover:hover) and (pointer:fine){.service-projects{padding-block:24px;margin-block:-24px}.service-project:hover{z-index:2}}
+.service-motion .service-reveal:not(.service-ready){opacity:0}
+@media(prefers-reduced-motion:reduce){.service-motion .service-reveal:not(.service-ready){opacity:1}}
+
+.service-related{display:flex;flex-direction:column;gap:16px;max-width:500px;padding-block:30px 65px}.service-related .menu-result{padding:4px 0;min-height:0}.service-related .menu-result-title{font:500 19.362px/1 'Restart Soft';letter-spacing:-.04em}.service-related .service-home{margin-top:24px}.service-home img{rotate:180deg}.service-related .menu-result:hover{color:#ffff40}.service-testimonials .supplied-testimonial .person{max-width:185px}@media(max-width:700px){.service-testimonials .supplied-testimonial .person{max-width:160px}}

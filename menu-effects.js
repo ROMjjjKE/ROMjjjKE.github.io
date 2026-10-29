@@ -1,0 +1,20 @@
+// A bounded, local raster transition: reuse already decoded media and laid-out text.
+// No screenshot service, image downloads, or continuous full-screen rendering.
+export function menuDisruption(stage,dialog,reduced){
+ const overlay=document.createElement('canvas');overlay.className='menu-raster';overlay.setAttribute('aria-hidden','true');dialog.prepend(overlay);
+ const source=document.createElement('canvas'),small=document.createElement('canvas');let frame;
+ function stop(){cancelAnimationFrame(frame);overlay.style.opacity=0;}
+ function play(){stop();if(reduced.matches)return;const w=innerWidth,h=innerHeight,scale=Math.min(1,1200/w);source.width=Math.ceil(w*scale);source.height=Math.ceil(h*scale);overlay.width=source.width;overlay.height=source.height;const ctx=source.getContext('2d');ctx.setTransform(scale,0,0,scale,0,0);ctx.fillStyle='#191919';ctx.fillRect(0,0,w,h);
+ for(const el of stage.querySelectorAll('img,video,canvas')){const r=el.getBoundingClientRect();if(!r.width||!r.height||r.bottom<0||r.top>h||r.right<0||r.left>w||!el.checkVisibility({checkOpacity:true,checkVisibilityCSS:true}))continue;try{ctx.save();ctx.beginPath();ctx.rect(r.left,r.top,r.width,r.height);ctx.clip();const iw=el.videoWidth||el.naturalWidth||el.width,ih=el.videoHeight||el.naturalHeight||el.height;if(!iw||!ih){ctx.restore();continue;}const k=getComputedStyle(el).objectFit==='contain'?Math.min(r.width/iw,r.height/ih):Math.max(r.width/iw,r.height/ih);ctx.drawImage(el,r.left+(r.width-iw*k)/2,r.top+(r.height-ih*k)/2,iw*k,ih*k);ctx.restore();}catch{ctx.restore();}}
+ const walker=document.createTreeWalker(stage,NodeFilter.SHOW_TEXT);let count=0;while(walker.nextNode()&&count<500){const node=walker.currentNode,el=node.parentElement;if(!node.textContent.trim()||!el.checkVisibility({checkOpacity:true,checkVisibilityCSS:true}))continue;const style=getComputedStyle(el);for(const match of node.textContent.matchAll(/\S+/g)){const range=document.createRange();range.setStart(node,match.index);range.setEnd(node,match.index+match[0].length);const r=range.getBoundingClientRect();if(!r.width||r.bottom<0||r.top>h)continue;ctx.font=`${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;ctx.fillStyle=style.color;ctx.textBaseline='top';ctx.fillText(style.textTransform==='uppercase'?match[0].toUpperCase():match[0],r.left,r.top);count++;}}
+ const paint=overlay.getContext('2d'),sample=small.getContext('2d'),start=performance.now();overlay.style.opacity=1;
+ function tick(now){const p=Math.min(1,(now-start)/720),block=Math.round(2+30*Math.sin(p*Math.PI*.7));small.width=Math.max(1,Math.ceil(source.width/block));small.height=Math.max(1,Math.ceil(source.height/block));sample.drawImage(source,0,0,small.width,small.height);paint.imageSmoothingEnabled=false;paint.clearRect(0,0,overlay.width,overlay.height);paint.drawImage(small,0,0,overlay.width,overlay.height);for(let y=0;y<overlay.height;y+=4){paint.fillStyle='rgba(0,0,0,.18)';paint.fillRect(0,y,overlay.width,1);}overlay.style.opacity=String(1-p);overlay.style.transform=`translateX(${Math.sin(p*55)*(1-p)*8}px)`;if(p<1)frame=requestAnimationFrame(tick);else stop();}frame=requestAnimationFrame(tick);
+ }return {play,stop};
+}
+export function pixelFloppy(element,reduced){
+ const model=element.querySelector('.floppy-model');let frame;
+ return hidden=>{cancelAnimationFrame(frame);if(reduced.matches)return;const start=performance.now();
+ function tick(now){const p=Math.min(1,(now-start)/480),cut=hidden?p:1-p;let cells='';const size=16;
+ for(let y=0;y<19;y++)for(let x=0;x<18;x++){const noise=((x*73+y*137)%101)/101;if(noise>cut*.97)cells+=`<rect x="${x*size}" y="${y*size}" width="${size}" height="${size}" fill="white"/>`;}
+ model.style.maskImage=`url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="288" height="304">${cells}</svg>`)}")`;model.style.maskSize='100% 100%';if(p<1)frame=requestAnimationFrame(tick);else model.style.maskImage='';}frame=requestAnimationFrame(tick);};
+}
