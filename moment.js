@@ -151,48 +151,12 @@ export function createMomentScene(scene, reducedMotion) {
     scene.classList.add('explored');wake();
   });
   function revealHeadline() {
+    // SiteFast: плавное появление строк без пиксельного канваса (кириллица не обрезается)
     const revealId=++headlineRun;
     cancelAnimationFrame(revealAnimation);
     scene.classList.remove('text-ready','for-ready');
-    if(headlineHovered) { scene.classList.add('text-ready'); return; }
-    if (reducedMotion.matches) { scene.classList.add('text-ready','for-ready'); headlineComplete=true; updateReady(); return; }
-    const ctx=pixels.getContext('2d');
-    const buffer=document.createElement('canvas');
-    buffer.width=460; buffer.height=108;
-    const b=buffer.getContext('2d');
-    if (!ctx || !b) { scene.classList.add('text-ready','for-ready'); headlineComplete=true; updateReady(); return; }
-    b.fillStyle='#e7e7e7'; b.textBaseline='alphabetic';
-    const box=headline.getBoundingClientRect();
-    headline.querySelectorAll('.moment-words>span:first-child,.moment-line>span').forEach(line=>{
-      const rect=line.getBoundingClientRect(),style=getComputedStyle(line);
-      b.font=`${style.fontWeight} ${parseFloat(style.fontSize)*2}px ${style.fontFamily}`;
-      b.letterSpacing=`${parseFloat(style.letterSpacing)*2}px`;
-      const marker=document.createElement('span');marker.style.cssText='display:inline-block;width:0;height:0;vertical-align:baseline';line.append(marker);
-      const baseline=marker.getBoundingClientRect().top;marker.remove();
-      const text=line.textContent.toUpperCase(),width=b.measureText(text).width;
-      b.fillText(text,(rect.left-box.left)*2+(rect.width*2-width)/2,(baseline-box.top)*2);
-    });
-    const source=b.getImageData(0,0,460,108).data;
-    pixels.width=460; pixels.height=108;
-    const started=performance.now(), currentRun=run;
-    function draw(now) {
-      if (!active || currentRun!==run || revealId!==headlineRun) return;
-      const p=Math.min(1,(now-started)/1900);
-      ctx.clearRect(0,0,460,108);
-      const size=p<.3?8:p<.65?4:2;
-      for(let y=0;y<108;y+=size) for(let x=0;x<460;x+=size) {
-        const alpha=source[(y*460+x)*4+3];
-        const noise=((x*17+y*31)%101)/101;
-        if(alpha && noise<p) { ctx.fillStyle=`rgba(231,231,231,${alpha/255})`; ctx.fillRect(x,y,size,size); }
-      }
-      if(p<1) revealAnimation=requestAnimationFrame(draw);
-      else {
-        scene.classList.add('text-ready');
-        // Hold the completed words for 1.5 seconds before the italic word enters.
-        setTimeout(()=>{if(active && currentRun===run && revealId===headlineRun && !headlineHovered) { scene.classList.add('for-ready'); setTimeout(()=>{if(active && currentRun===run && revealId===headlineRun){headlineComplete=true;updateReady();}},850); }},1500);
-      }
-    }
-    revealAnimation=requestAnimationFrame(draw);
+    scene.classList.add('text-ready');
+    setTimeout(()=>{ if(active && revealId===headlineRun){ scene.classList.add('for-ready'); headlineComplete=true; updateReady(); } },1200);
   }
   headline.addEventListener('pointerenter',event=>{
     if(!active || !formed || event.pointerType!=='mouse')return;

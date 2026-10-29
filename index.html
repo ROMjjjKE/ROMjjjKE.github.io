@@ -786,6 +786,30 @@ html[data-project].experience-booting:not(.experience-ready) .case-hero>*{visibi
 @media(max-width:560px){.service-cards{grid-template-columns:1fr}}
 /* одна карточка основателя */
 .team-card{opacity:1!important}
+.moment-words>span{opacity:1;transform:none;animation:sf-line-in .85s cubic-bezier(.16,1,.3,1) both}
+.moment-words>span:nth-child(2){animation-delay:.14s}
+.moment-line em{opacity:1}
+@keyframes sf-line-in{from{opacity:0;transform:translateY(.42em)}to{opacity:1;transform:none}}
+/* секция услуг */
+.services-section{position:relative;z-index:5;background:#050505;padding:96px 0 40px}
+.services-inner{max-width:1440px;margin:0 auto;padding:0 5.58%}
+.services-section .service-cards{padding:0}
+@media(max-width:900px){.services-section{padding:64px 0 24px}}
+.svc-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.8)}
+.svc-modal[data-open="1"]{display:flex}
+.svc-modal__box{position:relative;width:min(560px,100%);max-height:86vh;overflow:auto;padding:32px 28px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:#0d0d0d}
+.svc-modal__close{position:absolute;top:14px;right:14px;width:34px;height:34px;border:1px solid rgba(255,255,255,.15);border-radius:50%;background:none;color:#fff;font-size:16px;cursor:pointer}
+.svc-modal h3{font-family:"Restart Soft",Arial,sans-serif;font-size:24px;font-weight:600;color:#fff;margin:0 0 6px}
+.svc-modal .svc-price{font-family:monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#9a9a9a;margin:0 0 18px}
+.svc-modal ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px}
+.svc-modal li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.45;color:#d6d6d6}
+.svc-modal li:before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:#ffff40}
+.svc-modal__actions{display:flex;gap:10px;flex-wrap:wrap}
+.svc-modal__actions a{flex:1 1 160px;display:inline-flex;align-items:center;justify-content:center;height:46px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none}
+.svc-btn-call{background:#ffff40;color:#111}
+.svc-btn-order{background:#1c1c1c;color:#fff;border:1px solid rgba(255,255,255,.16)}
+.service-card{cursor:pointer}
+.service-card .svc-more{margin-top:12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#ffff40;opacity:.85}
 .floppy-logo-text{font-family:"Restart Soft",Arial,sans-serif;font-weight:600;font-size:12px;letter-spacing:-.01em;color:#4e5340;white-space:nowrap}
 </style>
     
@@ -952,10 +976,10 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
             <p>Вот что вам нужно: то, что останавливает на скролле, на улице, в разговоре.</p>
             <p>Играть по-крупному уже пора.<br>Средний уровень уже занят.</p>
           </div>
-          <h2 class="story-title" aria-label="Для тех, кто не хочет играть по-крупному."><span aria-hidden="true">Для тех, кто</span><span class="story-middle" aria-hidden="true"><span>не</span><em class="story-insert">хочет</em></span><span aria-hidden="true">играть по-крупному.</span></h2>
+          <h2 class="story-title" aria-label="Средний уровень занят. Вам он не нужен."><span aria-hidden="true">Средний уровень занят.</span><br><span aria-hidden="true">Вам он не нужен.</span></h2>
           <div class="logo-wall" role="group" aria-label="Selected clients"></div>
           <button class="story-continue section-continue" type="button" aria-label="Дальше to final screen">↓</button>
-          <div class="testimonials" role="region" aria-label="Услуги SiteFast.by"><div class="testimonial-track" hidden></div><div class="service-cards"><article class="service-card"><h3>Сайты под ключ</h3><p>Структура, дизайн, тексты, вёрстка и запуск за 3 дня. Бесплатный макет до оплаты.</p><span class="price">от 450 BYN</span></article><article class="service-card"><h3>ИИ-агенты</h3><p>Приём заявок и запись 24/7. Каталог из 30+ готовых агентов, запуск за 2 недели.</p><span class="price">450 BYN · 200/мес</span></article><article class="service-card"><h3>Фирменный стиль</h3><p>Логотип, палитра, типографика и гайдлайн. Бренд, который узнают до названия.</p><span class="price">по задаче</span></article><article class="service-card"><h3>Сайт + агент под ключ</h3><p>Одна система: реклама, сайт, агент, аналитика. Один подрядчик вместо трёх.</p><span class="price">по задаче</span></article></div></div>
+          <div class="testimonials" hidden aria-hidden="true" style="display:none"><div class="testimonial-track"></div></div>
         </div></div>
       </section>
 
@@ -969,6 +993,12 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
           <button class="projects-next" type="button">Дальше<img src="./assets/projects/arrow-forward.svg" alt="" width="10" height="10"></button>
         </nav>
       </section>
+<section class="services-section" aria-label="Услуги SiteFast.by"><div class="services-inner"><div class="testimonials" role="region" aria-label="Услуги SiteFast.by"><div class="testimonial-track" hidden></div><div class="service-cards">
+<button class="service-card" type="button" data-svc="sites"><h3>Сайты под ключ</h3><p>Структура, дизайн, тексты, вёрстка и запуск за 3 дня. Бесплатный макет до оплаты.</p><span class="price">от 450 BYN</span><span class="svc-more">Подробнее →</span></button>
+<button class="service-card" type="button" data-svc="agents"><h3>ИИ-агенты</h3><p>Приём заявок и запись 24/7. Каталог из 30+ готовых агентов, запуск за 2 недели.</p><span class="price">450 BYN · 200/мес</span><span class="svc-more">Подробнее →</span></button>
+<button class="service-card" type="button" data-svc="brand"><h3>Фирменный стиль</h3><p>Логотип, палитра, типографика и гайдлайн. Бренд, который узнают до названия.</p><span class="price">по задаче</span><span class="svc-more">Подробнее →</span></button>
+<button class="service-card" type="button" data-svc="combo"><h3>Сайт + агент под ключ</h3><p>Одна система: реклама, сайт, агент, аналитика. Один подрядчик вместо трёх.</p><span class="price">по задаче</span><span class="svc-more">Подробнее →</span></button>
+</div></div></div></section>
 <section class="final-scene" aria-label="Let’s make it" tabindex="0" aria-hidden="true" inert>
 <div class="final-copy"><p>Вы видели, как это выглядит. Вы понимаете разницу между сайтом, который подходит, и сайтом, который приносит клиентов. Мы делаем для тех, кто не хочет быть незаметным: сайт, которым гордятся до запуска и через год после.</p><p>Если это про вас — давайте сделаем.</p></div>
 <h2 class="final-title">Самое надёжное,<br>что можно сделать сейчас, —<br>стать <em>заметным.</em></h2>
@@ -1010,5 +1040,60 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
       <button class="sound-button motion-toggle" type="button" aria-label="Pause motion" aria-pressed="false" title="Pause motion"><img src="./assets/asterisk.svg" alt="" width="11" height="12" /></button>
     </main>
     <dialog class="video-dialog" aria-label="Client testimonial video"><button class="video-close" type="button" aria-label="Закрыть video"><span aria-hidden="true">×</span> <span>Закрыть</span></button><video class="testimonial-player" controls playsinline preload="none" aria-label="Client testimonial"></video></dialog>
-  <section class="plain-overview" aria-label="Studio overview"><h1>Сайты, ИИ-агенты и цифровые продукты.</h1><p>Сайты, которые находят. ИИ-агенты, которые отвечают клиентам 24/7. Делаем так, чтобы ваш бизнес выбирали.</p><h2>Работы</h2><ul><li><a href="/projects/society-for-all/">Фонд «Образование для всех»</a></li><li><a href="/projects/koscom-30/">Koscom</a></li><li><a href="/projects/unit-architects/">UNIT architekti</a></li><li><a href="/projects/otk/">Oslo Tennisklubb</a></li><li><a href="/projects/goodveri/">Goodveri</a></li><li><a href="/projects/magu/">Magu</a></li><li><a href="/projects/aomu/">AOMU</a></li><li><a href="/projects/arkady/">Arkády</a></li><li><a href="/projects/luxury-travel-digest/">Luxury Travel Digest</a></li><li><a href="/projects/sunnysoft/">Sunnysoft</a></li><li><a href="/projects/liberalni-institut/">Liberální institut</a></li><li><a href="/projects/nachonacho/">NachoNacho</a></li><li><a href="/projects/walletii/">Walletii</a></li></ul><h2>Работы</h2><ul><li><a href="/best-branding">Фирменный стиль и упаковка</a></li><li><a href="/websites">Дизайн сайта</a></li><li><a href="/mobile-apps-saas-design">Сайты и ИИ-агенты</a></li><li><a href="/full-product-design">Бренд и цифровой продукт</a></li></ul><p><a href="/about-us">О студии</a> · <a href="/blog">Блог</a> · <a href="mailto:roman@sitefast.by">Обсудить проект</a></p></section></body>
+  <section class="plain-overview" aria-label="Studio overview"><h1>Сайты, ИИ-агенты и цифровые продукты.</h1><p>Сайты, которые находят. ИИ-агенты, которые отвечают клиентам 24/7. Делаем так, чтобы ваш бизнес выбирали.</p><h2>Работы</h2><ul><li><a href="/projects/society-for-all/">Фонд «Образование для всех»</a></li><li><a href="/projects/koscom-30/">Koscom</a></li><li><a href="/projects/unit-architects/">UNIT architekti</a></li><li><a href="/projects/otk/">Oslo Tennisklubb</a></li><li><a href="/projects/goodveri/">Goodveri</a></li><li><a href="/projects/magu/">Magu</a></li><li><a href="/projects/aomu/">AOMU</a></li><li><a href="/projects/arkady/">Arkády</a></li><li><a href="/projects/luxury-travel-digest/">Luxury Travel Digest</a></li><li><a href="/projects/sunnysoft/">Sunnysoft</a></li><li><a href="/projects/liberalni-institut/">Liberální institut</a></li><li><a href="/projects/nachonacho/">NachoNacho</a></li><li><a href="/projects/walletii/">Walletii</a></li></ul><h2>Работы</h2><ul><li><a href="/best-branding">Фирменный стиль и упаковка</a></li><li><a href="/websites">Дизайн сайта</a></li><li><a href="/mobile-apps-saas-design">Сайты и ИИ-агенты</a></li><li><a href="/full-product-design">Бренд и цифровой продукт</a></li></ul><p><a href="/about-us">О студии</a> · <a href="/blog">Блог</a> · <a href="mailto:roman@sitefast.by">Обсудить проект</a></p></section>
+<div class="svc-modal" id="svcModal" role="dialog" aria-modal="true" aria-labelledby="svcTitle">
+  <div class="svc-modal__box">
+    <button class="svc-modal__close" type="button" aria-label="Закрыть">✕</button>
+    <h3 id="svcTitle"></h3>
+    <p class="svc-price" id="svcPrice"></p>
+    <ul id="svcList"></ul>
+    <div class="svc-modal__actions">
+      <a class="svc-btn-call" id="svcCall" href="tel:+375445783037">Позвонить</a>
+      <a class="svc-btn-order" id="svcOrder" href="mailto:roman@sitefast.by">Заказать</a>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const DATA={
+    sites:{title:"Сайты под ключ",price:"от 450 BYN · запуск за 3 дня",items:[
+      "Структура и тексты под вашу услугу, без воды и штампов",
+      "Дизайн на уровне AWWWARDS, адаптив под телефон и десктоп",
+      "Скорость 90+ по Lighthouse, SEO-разметка, аналитика",
+      "Бесплатный макет до оплаты: смотрите, потом решаете",
+      "Предоплата 50%, остаток после сдачи этапа"]},
+    agents:{title:"ИИ-агенты",price:"450 BYN разово · 200 BYN/мес",items:[
+      "Принимает заявки и отвечает клиентам круглосуточно",
+      "Ведёт запись, считает стоимость, дожимает на диалог",
+      "Каталог из 30+ готовых агентов под разные ниши",
+      "Запуск за 2 недели, интеграция с сайтом и Telegram",
+      "Работает, пока вы заняты, спите или в отпуске"]},
+    brand:{title:"Фирменный стиль",price:"стоимость по задаче",items:[
+      "Логотип, палитра, типографика, сетка",
+      "Гайдлайн: как использовать бренд без вас",
+      "Носители: сайт, визитки, соцсети, вывеска",
+      "Бренд, который узнают до того, как прочтут название"]},
+    combo:{title:"Сайт + агент под ключ",price:"стоимость по задаче",items:[
+      "Одна система: реклама, сайт, агент, аналитика",
+      "Один подрядчик вместо трёх, один договор",
+      "Заявки не теряются: агент отвечает первым",
+      "Отчёты по заявкам и стоимости лида",
+      "Предоплата 50%, остаток после сдачи этапа"]}};
+  const modal=document.getElementById('svcModal');
+  const ttl=document.getElementById('svcTitle'), pr=document.getElementById('svcPrice'), list=document.getElementById('svcList');
+  const order=document.getElementById('svcOrder');
+  function open(id){
+    const d=DATA[id]; if(!d) return;
+    ttl.textContent=d.title; pr.textContent=d.price;
+    list.innerHTML=d.items.map(x=>'<li>'+x+'</li>').join('');
+    order.href='mailto:roman@sitefast.by?subject='+encodeURIComponent('Заявка: '+d.title)+'&body='+encodeURIComponent('Здравствуйте! Интересует: '+d.title+'. Опишите задачу и сроки — отвечу с предложением.');
+    modal.dataset.open='1'; document.body.style.overflow='hidden';
+  }
+  function close(){modal.dataset.open='0'; document.body.style.overflow='';}
+  document.querySelectorAll('.service-card').forEach(c=>c.addEventListener('click',()=>open(c.dataset.svc)));
+  modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.svc-modal__close'))close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+})();
+</script>
+</body>
 </html>

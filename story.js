@@ -81,9 +81,7 @@ export function createStory(reducedMotion,onSection=()=>{}){
   function revealTitle(){
     clearTitle();title.classList.remove('space-ready','dont-ready');
     if(reducedMotion.matches || paused){title.classList.add('space-ready','dont-ready');return;}
-    cancelTitle=pixelReveal(title,{duration:1900,exclude:'.story-insert'});
-    titleTimers.push(setTimeout(()=>{if(active && !titleHovered)title.classList.add('space-ready');},3400));
-    titleTimers.push(setTimeout(()=>{if(active && !titleHovered)title.classList.add('dont-ready');},3650));
+    title.classList.add('space-ready','dont-ready');
   }
   title.addEventListener('pointerenter',event=>{if(!active || !headlineShown || event.pointerType!=='mouse')return;titleHovered=true;clearTitle();title.classList.remove('space-ready','dont-ready');});
   title.addEventListener('pointerleave',event=>{if(!titleHovered || event.pointerType!=='mouse')return;titleHovered=false;revealTitle();});
