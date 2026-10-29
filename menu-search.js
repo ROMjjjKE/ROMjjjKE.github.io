@@ -1,10 +1,10 @@
 export const MENU_PAGES=[
- {title:'Intro',type:'Page',href:'/#/opening'},
- {title:'Moments',type:'Page',href:'/#/moment'},
- {title:'Our work',type:'Page',href:'/#/projects'},
- {title:'The difference',type:'Page',href:'/#/approach'},
- {title:'The studio',type:'Page',href:'/#/studio'},
- {title:'Let’s talk',type:'Window',href:'#contact'}
+ {title:'Начало',type:'Страница',href:'/#/opening'},
+ {title:'Моменты',type:'Страница',href:'/#/moment'},
+ {title:'Работы',type:'Страница',href:'/#/projects'},
+ {title:'Подход',type:'Страница',href:'/#/approach'},
+ {title:'Студия',type:'Страница',href:'/#/studio'},
+ {title:'Обсудить проект',type:'Окно',href:'#contact'}
 ];
 export function searchMenu(items,query='',filter=''){
  const clean=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();

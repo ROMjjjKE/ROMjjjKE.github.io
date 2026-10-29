@@ -2,16 +2,16 @@ export const SERVICES = [
   {
     "path": "/best-branding",
     "ogProject": "magu",
-    "title": "Brand identity & packaging design",
-    "headline": "Branding for those who",
-    "ending": "want to play it safe.",
-    "description": "Brand strategy, visual identity and packaging design from garcy.studio, an independent design studio in Prague. Explore Magu, AOMU and Oslo Tennisklubb.",
-    "intro": "Your brand should be recognisable before anyone reads its name.\n\nWe help new businesses find their visual voice and established brands move forward without losing what makes them valuable. From the first mark to the packaging, website and everyday communication, we build a system that belongs to you.\n\ngarcy.studio is an independent design studio in Prague, working across brand strategy, visual identity and packaging. Our starting point is your business, your audience and the difference you need people to notice.",
+    "title": "Фирменный стиль и упаковка",
+    "headline": "Брендинг для тех, кто",
+    "ending": "хочет остаться незаметным.",
+    "description": "Фирменный стиль, логотип и упаковка от SiteFast.by. Делаем бренд узнаваемым до того, как прочитают название.",
+    "intro": "Бренд должен узнаваться раньше, чем человек прочитает название.\n\nПомогаем новому бизнесу найти свой визуальный язык, а действующему — двигаться дальше, не теряя того, что уже работает. От знака до упаковки, сайта и повседневных коммуникаций строим систему, которая принадлежит вам.\n\nSiteFast.by — студия разработки сайтов и ИИ-агентов. Отправная точка — ваш бизнес, ваша аудитория и то отличие, которое люди должны заметить.",
     "items": [
-      "Brand strategy and creative direction",
-      "Logo, typography and colour systems",
-      "Packaging and label design",
-      "Brand guidelines and applications"
+      "Стратегия бренда и арт-дирекшн",
+      "Логотип, типографика и цвет",
+      "Упаковка и этикетка",
+      "Гайдлайн и носители"
     ],
     "projects": [
       "otk",
@@ -31,16 +31,16 @@ export const SERVICES = [
   {
     "path": "/websites",
     "ogProject": "nachonacho",
-    "title": "Website design",
-    "headline": "Websites for those who",
-    "ending": "want to blend in.",
-    "description": "Brand-led website design from garcy.studio in Prague. Clear content, responsive interfaces and thoughtful interactions for businesses ready to stand apart.",
-    "intro": "A good website makes your business easier to understand and harder to forget.\n\nWe design websites that connect a distinctive brand with a clear user journey. The structure explains what you do. The design gives people a reason to remember it. Every screen helps them find the next step.\n\nFrom our studio in Prague, we work on new websites and redesigns for organisations, product businesses and creative teams. We bring content structure, user experience and visual design together from the beginning.",
+    "title": "Сайты под ключ",
+    "headline": "Сайты для тех, кто",
+    "ending": "хочет быть как все.",
+    "description": "Разработка сайтов под ключ за 3 дня. Бесплатный макет до начала работ. Дизайн, вёрстка, тексты, запуск.",
+    "intro": "Сайт нужен не для красоты, а чтобы приносить заявки.\n\nСобираем сайт под ключ: структура, дизайн, тексты, вёрстка, подключение формы и аналитики. Показываем бесплатный макет до начала работ — вы видите, как будет выглядеть сайт, до оплаты.\n\nSiteFast.by делает сайты для малого и среднего бизнеса: быстро, без конструкторов и подписок, сайт остаётся вашей собственностью.",
     "items": [
-      "Website audits and content structure",
-      "User journeys and wireframes",
-      "Responsive website and interface design",
-      "Interaction design and development handover"
+      "Структура и тексты под услугу",
+      "Дизайн и вёрстка под мобильные",
+      "Формы заявок и аналитика",
+      "Запуск за 3 дня"
     ],
     "projects": [
       "otk",
@@ -56,16 +56,16 @@ export const SERVICES = [
   {
     "path": "/mobile-apps-saas-design",
     "ogProject": "walletii",
-    "title": "App & SaaS product design",
-    "headline": "Digital products for those who",
-    "ending": "want more of the same.",
-    "description": "UX and UI design for apps and SaaS products by garcy.studio. User research, product flows, prototypes and design systems that make complex products easier to use.",
-    "intro": "Complex products can still feel simple to use.\n\nWe help teams turn a growing set of features into an experience people understand. That means clearer journeys, useful interfaces and a visual language that connects the product to its brand.\n\nOur app and SaaS design work covers user experience, interface design and reusable design systems. Whether you’re shaping a new product or improving an existing one, we start with the tasks people need to complete and the problems getting in their way.",
+    "title": "ИИ-агенты и цифровые продукты",
+    "headline": "ИИ-агенты для тех, кто",
+    "ending": "хочет терять заявки.",
+    "description": "Внедрение ИИ-агентов: приём заявок, запись, ответы клиентам 24/7. Каталог из 30+ агентов, запуск за 2 недели.",
+    "intro": "Клиент пишет в 23:40 — и не получает ответа, пока вы не проснётесь.\n\nИИ-агент принимает заявки, отвечает на вопросы, ведёт запись, считает стоимость и передаёт вам готовый диалог. Круглосуточно, без выходных и больничных. Каталог из 30+ готовых агентов под разные задачи: автосервис, клиники, услуги, доставка.\n\nfastai.by — направление ИИ-агентов. Запуск за 2 недели, тест 3 дня бесплатно.",
     "items": [
-      "UX audits and user research",
-      "Product flows and information architecture",
-      "Wireframes and interactive prototypes",
-      "UI design and product design systems"
+      "Агент на сайте и в мессенджерах",
+      "Приём заявок и запись 24/7",
+      "Ответы по базе знаний",
+      "CRM и передача диалогов"
     ],
     "projects": [
       "nachonacho",
@@ -79,16 +79,16 @@ export const SERVICES = [
   {
     "path": "/full-product-design",
     "ogProject": "nachonacho",
-    "title": "Brand & digital product design",
-    "headline": "Full product design for those who",
-    "ending": "want disconnected pieces.",
-    "description": "Connected brand, website and digital product design from garcy.studio. One design team for strategy, identity, UX, UI and a coherent experience from launch onward.",
-    "intro": "Your brand, website and product should feel like the same business.\n\nWe bring them together. One design team carries the idea from positioning and identity into the website, product experience and the details people use every day.\n\nThis service is for teams launching something new or bringing a fragmented experience into focus. We connect brand strategy, UX and UI design so each decision supports the next, with a clear handover to the people building the product.",
+    "title": "Сайт и агент под ключ",
+    "headline": "Всё под ключ для тех, у кого",
+    "ending": "всё разрознено.",
+    "description": "Сайт, ИИ-агент, аналитика и реклама в одной связке. Один подрядчик вместо трёх.",
+    "intro": "По отдельности всё работает, вместе — не работает.\n\nСайт, агент, реклама и аналитика собираются в одну систему: человек пришёл с рекламы, агент ответил, заявка попала в CRM, вы видите источник. Один подрядчик вместо трёх, одна ответственность за результат.\n\nSiteFast.by и fastai.by: сайты, ИИ-агенты и цифровые продукты.",
     "items": [
-      "Discovery and product direction",
-      "Brand identity and visual systems",
-      "Website, UX and interface design",
-      "Prototypes, testing and developer collaboration"
+      "Сайт и лендинги",
+      "ИИ-агент и автоматизация",
+      "Аналитика и реклама",
+      "Поддержка и развитие"
     ],
     "projects": [
       "nachonacho",

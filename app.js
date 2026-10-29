@@ -11,10 +11,10 @@ import { createStory } from './story.js';
 import { createMomentScene, createMusicPlayer } from './moment.js';
 // Opening-scene timing and content are intentionally editable in one place.
 const MESSAGES = [
-  { sender: 'Familiar Stranger', text: 'Hey, who made your brand?' },
-  { sender: 'The one who left you on read', text: 'Your site is incredible. What studio is that?' },
-  { sender: 'Your old boss', text: 'GPT recommended your site, how did you do that?' },
-  { sender: 'The one who said no', text: 'Someone just sent me your brand.' },
+  { sender: 'Клиент из Google', text: 'Здравствуйте! Кто делал ваш сайт?' },
+  { sender: 'Заявка, на которую не ответили', text: 'Крутой сайт. Кто делал?' },
+  { sender: 'Your old boss', text: 'ИИ-агент принял 14 заявок, пока вы спали' },
+  { sender: 'Клиент, который выбрал конкурента', text: 'Мне только что скинули ссылку на ваш сайт.' },
 ];
 const TIMING = { firstMessage: 1000, betweenMessages: 1900, settle: 600, arrival: 560, videoFade: 1400, dropStagger: 100, dropDuration: 1000 };
 const PORTRAITS = Array.from({length:16},(_,i)=>({position:`${(i%4)*100/3}% ${Math.floor(i/4)*100/3}%`}));
@@ -72,7 +72,7 @@ let soundBuffer;
 let soundDecode;
 let soundBytes;
 const loadSound = () => soundBytes ??= fetch('./assets/audio/new-notification-051.mp3')
-  .then(response => { if (!response.ok) throw new Error('Notification sound could not load'); return response.arrayBuffer(); })
+  .then(response => { if (!response.ok) throw new Error('Не удалось загрузить звук уведомлений'); return response.arrayBuffer(); })
   .catch(error => { console.warn(error.message); return null; });
 async function prepareSound() {
   if (!audioContext) return;
@@ -154,7 +154,7 @@ function setExpanded(value) {
   expanded = value;
   stack.dataset.expanded = String(value);
   stack.setAttribute('aria-expanded', String(value));
-  stack.setAttribute('aria-label', 'Continue to next section. Hover or focus to expand notifications.');
+  stack.setAttribute('aria-label', 'Дальше по странице. Наведите, чтобы раскрыть уведомления.');
   layout();
 }
 
@@ -218,7 +218,7 @@ function deliveryTick(now) {
     document.querySelector('.opening-continue').disabled=false;
     stack.dataset.ready = 'true';
     stack.setAttribute('aria-disabled', 'false');
-    stack.setAttribute('aria-label', 'Continue to next section. Hover or focus to expand notifications.');
+    stack.setAttribute('aria-label', 'Дальше по странице. Наведите, чтобы раскрыть уведомления.');
     // Do not consume momentum from a scroll that began before the last arrival.
     lastWheelAt = performance.now();
     wheelDistance = 0;
@@ -294,7 +294,7 @@ function replay(fromEntry = false) {
   stack.dataset.expanded = 'false';
   stack.setAttribute('aria-expanded', 'false');
   stack.setAttribute('aria-disabled', 'true');
-  stack.setAttribute('aria-label', 'Notifications arriving');
+  stack.setAttribute('aria-label', 'Приходят уведомления');
   stack.tabIndex = 0;
   opening.inert = false;
   opening.style.visibility = '';
@@ -346,7 +346,7 @@ stack.addEventListener('click', event => {
   if (touch && !pinnedOpen) {
     pinnedOpen = true;
     setExpanded(true);
-    stack.setAttribute('aria-label', 'Messages expanded. Tap a message to continue to the next section.');
+    stack.setAttribute('aria-label', 'Уведомления раскрыты. Нажмите на сообщение, чтобы идти дальше.');
     return;
   }
   exitIntro();

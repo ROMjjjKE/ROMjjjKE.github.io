@@ -1,13 +1,13 @@
 // Shared, factual site metadata. Project-specific editorial content lives in content/projects.json.
 export const SITE = {
- origin:'https://www.garcy.studio', name:'garcy.studio',
- title:'Design that makes you unmistakable — garcy.studio',
- description:'A brand people ask about. A website that makes things click. We design brands, websites and digital products that make your business unmistakable.',
- email:'hello@garcy.studio',
+ origin:'https://romjjjke.github.io', name:'SiteFast.by',
+ title:'Сайты и ИИ-агенты, которые приносят клиентов — SiteFast.by',
+ description:'Делаем сайты под ключ за 3 дня и внедряем ИИ-агентов: приём заявок и запись 24/7. Бесплатный макет до начала работ.',
+ email:'roman@sitefast.by',
  measurementId:'G-3DXVNT1G04', // Existing verified studio stream; activated only in public builds.
- socials:['https://www.behance.net/thisisgarcy','https://www.instagram.com/garcy.studio/','https://www.linkedin.com/company/garcy-studio/','https://www.youtube.com/@garcystudio'],
+ socials:['https://t.me/romjkKe'],
 };
 export {SERVICES} from './content/services.js';
 import {PROJECT_NAMES} from './project-registry.js';
 export {PROJECT_NAMES};
-export function routeMeta(route,projects={}){const slug=route.startsWith('project/')?route.slice(8):null;return slug&&PROJECT_NAMES[slug]?{title:`${PROJECT_NAMES[slug]} — Selected work — garcy.studio`,description:`Explore ${PROJECT_NAMES[slug]}, a selected design project by garcy.studio.`,path:`/projects/${slug}/`,...projects[slug]}:{title:SITE.title,description:SITE.description,path:'/'};}
+export function routeMeta(route,projects={}){const slug=route.startsWith('project/')?route.slice(8):null;return slug&&PROJECT_NAMES[slug]?{title:`${PROJECT_NAMES[slug]} — Работы — SiteFast.by`,description:`Проект ${PROJECT_NAMES[slug]} в портфолио SiteFast.by.`,path:`/projects/${slug}/`,...projects[slug]}:{title:SITE.title,description:SITE.description,path:'/'};}
