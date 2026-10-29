@@ -793,7 +793,11 @@ html[data-project].experience-booting:not(.experience-ready) .case-hero>*{visibi
 /* секция услуг */
 .services-section{position:relative;z-index:5;background:#050505;padding:96px 0 40px}
 .services-inner{max-width:1440px;margin:0 auto;padding:0 5.58%}
-.services-section .service-cards{padding:0}
+.testimonials .service-cards{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;width:min(1180px,86vw);margin:0 auto;padding:0}
+.testimonials .service-card{z-index:6}
+.services-section .testimonials{position:static;opacity:1;transform:none;height:auto;display:block}
+.services-section .testimonial-track{display:block;transform:none}
+.services-section .service-card{min-height:250px}
 @media(max-width:900px){.services-section{padding:64px 0 24px}}
 .svc-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.8)}
 .svc-modal[data-open="1"]{display:flex}
@@ -979,7 +983,12 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
           <h2 class="story-title" aria-label="Средний уровень занят. Вам он не нужен."><span aria-hidden="true">Средний уровень занят.</span><br><span aria-hidden="true">Вам он не нужен.</span></h2>
           <div class="logo-wall" role="group" aria-label="Selected clients"></div>
           <button class="story-continue section-continue" type="button" aria-label="Дальше to final screen">↓</button>
-          <div class="testimonials" hidden aria-hidden="true" style="display:none"><div class="testimonial-track"></div></div>
+          <div class="testimonials" role="region" aria-label="Услуги SiteFast.by"><div class="testimonial-track" hidden></div><div class="service-cards">
+<button class="service-card" type="button" data-svc="sites"><h3>Сайты под ключ</h3><p>Структура, дизайн, тексты, вёрстка и запуск за 3 дня. Бесплатный макет до оплаты.</p><span class="price">от 450 BYN</span><span class="svc-more">Подробнее →</span></button>
+<button class="service-card" type="button" data-svc="agents"><h3>ИИ-агенты</h3><p>Приём заявок и запись 24/7. Каталог из 30+ готовых агентов, запуск за 2 недели.</p><span class="price">450 BYN · 200/мес</span><span class="svc-more">Подробнее →</span></button>
+<button class="service-card" type="button" data-svc="brand"><h3>Фирменный стиль</h3><p>Логотип, палитра, типографика и гайдлайн. Бренд, который узнают до названия.</p><span class="price">по задаче</span><span class="svc-more">Подробнее →</span></button>
+<button class="service-card" type="button" data-svc="combo"><h3>Сайт + агент под ключ</h3><p>Одна система: реклама, сайт, агент, аналитика. Один подрядчик вместо трёх.</p><span class="price">по задаче</span><span class="svc-more">Подробнее →</span></button>
+</div></div>
         </div></div>
       </section>
 
@@ -993,12 +1002,7 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
           <button class="projects-next" type="button">Дальше<img src="./assets/projects/arrow-forward.svg" alt="" width="10" height="10"></button>
         </nav>
       </section>
-<section class="services-section" aria-label="Услуги SiteFast.by"><div class="services-inner"><div class="testimonials" role="region" aria-label="Услуги SiteFast.by"><div class="testimonial-track" hidden></div><div class="service-cards">
-<button class="service-card" type="button" data-svc="sites"><h3>Сайты под ключ</h3><p>Структура, дизайн, тексты, вёрстка и запуск за 3 дня. Бесплатный макет до оплаты.</p><span class="price">от 450 BYN</span><span class="svc-more">Подробнее →</span></button>
-<button class="service-card" type="button" data-svc="agents"><h3>ИИ-агенты</h3><p>Приём заявок и запись 24/7. Каталог из 30+ готовых агентов, запуск за 2 недели.</p><span class="price">450 BYN · 200/мес</span><span class="svc-more">Подробнее →</span></button>
-<button class="service-card" type="button" data-svc="brand"><h3>Фирменный стиль</h3><p>Логотип, палитра, типографика и гайдлайн. Бренд, который узнают до названия.</p><span class="price">по задаче</span><span class="svc-more">Подробнее →</span></button>
-<button class="service-card" type="button" data-svc="combo"><h3>Сайт + агент под ключ</h3><p>Одна система: реклама, сайт, агент, аналитика. Один подрядчик вместо трёх.</p><span class="price">по задаче</span><span class="svc-more">Подробнее →</span></button>
-</div></div></div></section>
+
 <section class="final-scene" aria-label="Let’s make it" tabindex="0" aria-hidden="true" inert>
 <div class="final-copy"><p>Вы видели, как это выглядит. Вы понимаете разницу между сайтом, который подходит, и сайтом, который приносит клиентов. Мы делаем для тех, кто не хочет быть незаметным: сайт, которым гордятся до запуска и через год после.</p><p>Если это про вас — давайте сделаем.</p></div>
 <h2 class="final-title">Самое надёжное,<br>что можно сделать сейчас, —<br>стать <em>заметным.</em></h2>
@@ -1041,6 +1045,7 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
     </main>
     <dialog class="video-dialog" aria-label="Client testimonial video"><button class="video-close" type="button" aria-label="Закрыть video"><span aria-hidden="true">×</span> <span>Закрыть</span></button><video class="testimonial-player" controls playsinline preload="none" aria-label="Client testimonial"></video></dialog>
   <section class="plain-overview" aria-label="Studio overview"><h1>Сайты, ИИ-агенты и цифровые продукты.</h1><p>Сайты, которые находят. ИИ-агенты, которые отвечают клиентам 24/7. Делаем так, чтобы ваш бизнес выбирали.</p><h2>Работы</h2><ul><li><a href="https://romjjjke.github.io/homemebel-site/" target="_blank" rel="noopener">Фонд «Образование для всех»</a></li><li><a href="https://romjjjke.github.io/panskiy-dranik-minsk/" target="_blank" rel="noopener">Koscom</a></li><li><a href="https://romjjjke.github.io/hypeauto-avto-kitay-usa/" target="_blank" rel="noopener">UNIT architekti</a></li><li><a href="https://chistosliv.by/" target="_blank" rel="noopener">Oslo Tennisklubb</a></li><li><a href="https://xn--80aae0aajdok4bq1bzf9a.com/" target="_blank" rel="noopener">Goodveri</a></li><li><a href="https://autocontinents.by/" target="_blank" rel="noopener">Magu</a></li><li><a href="https://karkasmasterr.by/" target="_blank" rel="noopener">AOMU</a></li><li><a href="https://teddysantech.by/" target="_blank" rel="noopener">Arkády</a></li><li><a href="https://romjjjke.github.io/pishchik-plitochnik-brest-malorita/" target="_blank" rel="noopener">Luxury Travel Digest</a></li><li><a href="https://sitefast.by/" target="_blank" rel="noopener">Sunnysoft</a></li><li><a href="https://fastai.by/" target="_blank" rel="noopener">Liberální institut</a></li><li><a href="https://klimatglobal.by/" target="_blank" rel="noopener">NachoNacho</a></li><li><a href="#" target="_blank" rel="noopener">Walletii</a></li></ul><h2>Работы</h2><ul><li><a href="/best-branding">Фирменный стиль и упаковка</a></li><li><a href="/websites">Дизайн сайта</a></li><li><a href="/mobile-apps-saas-design">Сайты и ИИ-агенты</a></li><li><a href="/full-product-design">Бренд и цифровой продукт</a></li></ul><p><a href="/about-us">О студии</a> · <a href="/blog">Блог</a> · <a href="mailto:roman@sitefast.by">Обсудить проект</a></p></section>
+
 <div class="svc-modal" id="svcModal" role="dialog" aria-modal="true" aria-labelledby="svcTitle">
   <div class="svc-modal__box">
     <button class="svc-modal__close" type="button" aria-label="Закрыть">✕</button>
@@ -1087,20 +1092,45 @@ Three years meant thousands of small decisions, feedback rounds, edge cases and 
     ttl.textContent=d.title; pr.textContent=d.price;
     list.innerHTML=d.items.map(x=>'<li>'+x+'</li>').join('');
     order.href='mailto:roman@sitefast.by?subject='+encodeURIComponent('Заявка: '+d.title)+'&body='+encodeURIComponent('Здравствуйте! Интересует: '+d.title+'. Опишите задачу и сроки — отвечу с предложением.');
-    modal.dataset.open='1'; document.body.style.overflow='hidden';
+    modal.dataset.open='1'; document.body.style.overflow='auto'; modal.style.pointerEvents='auto';
   }
   function close(){modal.dataset.open='0'; document.body.style.overflow='';}
-  document.querySelectorAll('.service-card').forEach(c=>c.addEventListener('click',()=>open(c.dataset.svc)));
+  function cardAt(x,y){
+    return [...document.querySelectorAll('.service-card')].find(c=>{
+      const r=c.getBoundingClientRect();
+      return r.width>0 && x>=r.left && x<=r.right && y>=r.top && y<=r.bottom;
+    });
+  }
+  // сцена story перекрыта соседней секцией — ловим клик по координатам в capture-фазе
+  document.addEventListener('click', e=>{
+    if(e.target.closest('.svc-modal')) return;
+    const card = e.target.closest('.service-card') || cardAt(e.clientX,e.clientY);
+    if(card && card.dataset.svc){ e.stopPropagation(); e.preventDefault(); open(card.dataset.svc); }
+  }, true);
   modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.svc-modal__close'))close();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
 })();
 </script>
 <script>
 (function(){
-  const cards=[...document.querySelectorAll('a.project-card')];
-  cards.slice(9).forEach(c=>c.style.display='none');
-  const lists=[...document.querySelectorAll('li')].filter(li=>{const a=li.querySelector('a');return a&&/^(Порше Сервис|КлиматГлобал|fastai.by|SiteFast.by)$/.test(a.textContent.trim());});
-  lists.slice(4).forEach(li=>li.style.display='none');
+  const COVER={
+    'society-for-all':'libinst4','koscom-30':'nachonacho6','unit-architects':'aomu-4',
+    'oslo':'aomu-7','goodveri':'arkady-1','magu':'koscom-1','aomu':'magu-1',
+    'oslo-02':'magu-2','magu-02':'otk-2','aomu-02':'sofa-1',
+    'liberalni-institut':'sofa-2','nachonacho':'sunnysoft-1','walletii':'unit-1'
+  };
+  function paint(){
+    document.querySelectorAll('.project-card').forEach(card=>{
+      const slug=card.dataset.project, file=COVER[slug]; if(!file) return;
+      const img=card.querySelector('img'); if(!img) return;
+      const want='/assets/project-content/'+file+'.webp';
+      img.loading='eager'; img.removeAttribute('loading');
+      if(img.getAttribute('src')!==want) img.src=want;
+    });
+  }
+  paint();
+  document.addEventListener('DOMContentLoaded',paint);
+  setTimeout(paint,1200); setTimeout(paint,3000);
 })();
 </script></body>
 </html>
