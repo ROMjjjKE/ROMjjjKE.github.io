@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evostar — автовоз РБ — РФ и эвакуатор 24/7 | короткий номер 7500</title>
+<meta name="description" content="Автовоз Беларусь — Россия: перевозка легковых авто, кроссоверов, мотоциклов и спецтехники РБ — РФ. Эвакуатор 24/7 по Минску и Беларуси. Короткий номер 7500 (МТС и А1), +375 29 747-75-00, +7 968 888-75-00. Обратный звонок за 15 минут.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F6F4;--pan:#FFFFFF;--pan2:#EFF1EE;--line:#E1E3DF;--ink:#16181A;--ink2:#0E1012;--mut:#666B6E;--red:#E11D2E;--redH:#B8151F;--tint:rgba(225,29,46,.07);--shadow:0 18px 44px rgba(16,18,20,.10)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jura',Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:16.5px;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+h1,h2,h3,.dsp{font-family:'Play',sans-serif;font-weight:700}
+.kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.kick::before{content:'';width:26px;height:2px;background:var(--red);display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--red);color:#fff;font-family:'Jura';font-weight:700;font-size:15px;padding:16px 30px;border-radius:10px;border:none;cursor:pointer;transition:.18s;box-shadow:0 10px 28px rgba(225,29,46,.25)}
+.btn:hover{background:var(--redH);transform:translateY(-2px)}
+.btn-o{background:transparent;border:1.5px solid rgba(255,255,255,.34);color:#fff;box-shadow:none}
+.btn-o:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.btn-d{background:transparent;border:1.5px solid var(--line);color:var(--ink);box-shadow:none}
+.btn-d:hover{border-color:var(--red);color:var(--red);background:#fff}
+.btn-lg{padding:19px 36px;font-size:16px}
+/* ── верхняя полоса ── */
+.topbar{background:var(--ink2);color:#C9CDCF;font-size:13px}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:38px;flex-wrap:wrap}
+.topbar .tl{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.topbar .dot{width:7px;height:7px;border-radius:50%;background:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.18);display:inline-block;margin-right:7px}
+.topbar a:hover{color:#fff}
+/* ── шапка ── */
+header{position:sticky;top:0;z-index:300;background:rgba(245,246,244,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:12px;flex:none}
+.lq{width:46px;height:46px;border-radius:11px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:'Play';font-weight:700;font-size:23px;color:#fff}
+.logo b{display:block;font-family:'Play';font-size:20px;letter-spacing:.06em;line-height:1.1}
+.logo span{font-size:10.5px;color:var(--mut);letter-spacing:.14em;text-transform:uppercase}
+nav.main{display:flex;gap:2px;margin-left:8px}
+nav.main a{font-size:14px;font-weight:600;color:#4C5254;padding:9px 12px;border-radius:8px;transition:.15s;white-space:nowrap}
+nav.main a:hover{color:var(--ink);background:var(--pan2)}
+.hdr-cta{display:flex;align-items:center;gap:12px;margin-left:auto}
+.hnums{display:flex;flex-direction:column;gap:2px;line-height:1.15}
+.hnums .short{font-family:'Play';font-weight:700;font-size:21px;color:var(--ink);display:flex;align-items:baseline;gap:7px}
+.hnums .short small{font-family:'Jura';font-weight:700;font-size:9.5px;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
+.hnums .extra{display:flex;gap:12px;font-size:12.5px;color:var(--mut);flex-wrap:wrap}
+.hnums .extra a:hover{color:var(--red)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:9px;padding:10px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0}
+.mnav{position:fixed;inset:0;z-index:950;background:var(--bg);display:none;flex-direction:column;padding:74px 24px 24px;gap:2px;overflow:auto}
+.mnav.on{display:flex}
+.mnav .mx{position:absolute;top:18px;right:22px;background:none;border:none;color:var(--ink);font-size:34px;cursor:pointer;line-height:1}
+.mnav a{font-family:'Play';font-size:24px;padding:13px 0;border-bottom:1px solid var(--line)}
+.mnav .mphone{color:var(--red);border:none;font-size:28px}
+/* ── hero ── */
+.hero{position:relative;color:#fff;overflow:clip}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,12,14,.94) 0%,rgba(11,12,14,.86) 42%,rgba(11,12,14,.52) 72%,rgba(11,12,14,.42) 100%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .82fr;gap:44px;align-items:start;padding-top:66px;padding-bottom:70px}
+.hero .kick{color:#FF5A67}
+.hero .kick::before{background:#FF5A67}
+h1{font-size:clamp(30px,4.5vw,56px);line-height:1.04;text-transform:uppercase;max-width:640px}
+h1 em{font-style:normal;color:#FF4A5A}
+.hsub{font-size:17px;color:#C6CACC;max-width:560px;margin-top:18px}
+.hsub b{color:#fff}
+.hfacts{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-size:14px;color:#D5D9DB}
+.hfacts span{display:flex;align-items:center;gap:8px}
+.hfacts b{font-family:'Play';color:#fff}
+.hcta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+/* мессенджеры — кружки как на референсе */
+.msgr{display:flex;align-items:center;gap:10px;margin-top:24px;flex-wrap:wrap}
+.msgr .lbl{font-size:12.5px;color:#A9AEB0;letter-spacing:.06em;margin-right:2px}
+.msgr a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.18s;box-shadow:0 8px 20px rgba(0,0,0,.28)}
+.msgr a:hover{transform:translateY(-3px) scale(1.04)}
+.msgr svg{width:22px;height:22px;fill:#fff}
+.msgr .v{background:#7360F2}
+.msgr .w{background:#25D366}
+.msgr .t{background:#2AABEE}
+.msgr .i{background:linear-gradient(45deg,#F09433,#E6683C 30%,#DC2743 55%,#CC2366 80%,#BC1888)}
+.msgr .e{background:#6B7280}
+/* калькулятор */
+.calc{background:#fff;color:var(--ink);border-radius:18px;padding:26px 24px 22px;box-shadow:0 26px 60px rgba(0,0,0,.34)}
+.calc h3{font-size:22px;text-transform:uppercase;letter-spacing:.01em}
+.calc .chint{font-size:12.5px;color:var(--mut);margin:6px 0 16px}
+.calc label{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:12px 0 6px}
+.calc select,.calc input{width:100%;font-family:'Jura';font-size:15px;font-weight:600;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666B6E' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.calc select:focus,.calc input:focus{outline:none;border-color:var(--red)}
+.calc .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc .sum{margin-top:16px;background:var(--pan2);border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.calc .sum span{font-size:12.5px;color:var(--mut);letter-spacing:.04em}
+.calc .sum b{font-family:'Play';font-size:24px;color:var(--red);white-space:nowrap}
+.calc .cnote{font-size:11.5px;color:#8A8F91;margin-top:9px;line-height:1.45}
+.calc .btn{width:100%;margin-top:14px}
+/* ── полоса преимуществ ── */
+.strip{background:var(--ink2);color:#fff}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:26px 22px}
+.st-it{display:flex;gap:12px;align-items:flex-start}
+.st-it svg{width:26px;height:26px;flex:none;stroke:var(--red);fill:none;stroke-width:1.9;margin-top:2px}
+.st-it b{display:block;font-family:'Play';font-size:16px}
+.st-it span{font-size:13px;color:#A9AEB0}
+/* ── секции ── */
+section.blk{padding:84px 0;border-bottom:1px solid var(--line)}
+section.soft{background:var(--pan)}
+h2{font-size:clamp(26px,3.7vw,44px);line-height:1.08;text-transform:uppercase;max-width:860px}
+.lead{font-size:17px;color:var(--mut);margin-top:14px;max-width:700px}
+.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+/* маршруты */
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px}
+.rt{background:var(--pan);border:1px solid var(--line);border-radius:13px;padding:18px 18px 16px;transition:.18s}
+.rt:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:var(--shadow)}
+.rt .ar{font-family:'Play';font-weight:700;font-size:16px;display:flex;align-items:center;gap:7px}
+.rt .ar i{font-style:normal;color:var(--red)}
+.rt span{font-size:12.5px;color:var(--mut)}
+table.prices{width:100%;border-collapse:collapse;margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:15px}
+table.prices th{background:var(--ink2);color:#fff;font-family:'Play';font-size:14px;text-align:left;padding:14px 18px;letter-spacing:.03em;font-weight:700}
+table.prices td{padding:13px 18px;border-top:1px solid var(--line);color:#33383A}
+table.prices td:last-child{font-family:'Play';font-weight:700;color:var(--red);white-space:nowrap}
+table.prices tr:nth-child(even) td{background:#FAFBFA}
+/* эвакуатор */
+.evac{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center}
+.evac-img{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.evac-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.evac-img .badge{position:absolute;left:16px;top:16px;background:var(--red);color:#fff;font-family:'Play';font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 13px;border-radius:8px}
+.egrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.eg{background:var(--pan2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.eg b{display:block;font-family:'Play';font-size:15.5px;margin-bottom:2px}
+.eg span{font-size:13px;color:var(--mut)}
+.egrid .wide{grid-column:1/-1}
+/* шаги */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.stp{border-top:3px solid var(--red);padding:20px 4px 0}
+.stp .sn{font-family:'Play';font-weight:700;font-size:42px;color:var(--red);line-height:1}
+.stp b{display:block;font-family:'Play';font-size:18px;margin:12px 0 7px}
+.stp p{font-size:14.5px;color:var(--mut)}
+/* преимущества */
+.prin{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.pbox{background:var(--pan);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.18s}
+.pbox:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.pbox .n{font-family:'Play';font-weight:700;font-size:15px;color:#fff;background:var(--red);width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+.pbox b{display:block;font-family:'Play';font-size:18.5px;margin-bottom:7px}
+.pbox p{font-size:14.5px;color:var(--mut)}
+/* отзывы */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.rev .st{color:#F5A623;font-size:15px;letter-spacing:2px}
+.rev p{font-size:14.5px;color:#40464A;line-height:1.6;flex:1}
+.rev .au{display:flex;align-items:center;gap:11px;border-top:1px solid var(--line);padding-top:13px}
+.rev .av{width:38px;height:38px;border-radius:50%;background:var(--tint);color:var(--red);font-family:'Play';font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+.rev .au b{display:block;font-size:14px;font-family:'Play'}
+.rev .au span{font-size:12px;color:var(--mut)}
+/* faq */
+.faq details{background:var(--pan);border:1px solid var(--line);border-radius:13px;margin-bottom:10px}
+.faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-family:'Play';font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq .pl{flex:none;width:28px;height:28px;border-radius:8px;background:var(--tint);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:700;transition:.22s}
+.faq details[open] .pl{transform:rotate(45deg);background:var(--red);color:#fff}
+.faq .fa{padding:0 22px 18px;font-size:15px;color:var(--mut);line-height:1.65}
+/* обратный звонок */
+.cb{background:var(--ink2);color:#fff;position:relative;overflow:clip}
+.cb::before{content:'';position:absolute;top:-40%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(225,29,46,.22),transparent 62%);pointer-events:none}
+.cb .wrap{position:relative;display:grid;grid-template-columns:1fr 460px;gap:46px;align-items:center;padding:74px 22px}
+.cb h2{max-width:560px}
+.cb p{color:#B9BDBF;margin-top:14px;max-width:520px;font-size:16px}
+.cb .perks{display:flex;flex-direction:column;gap:11px;margin-top:24px;font-size:14.5px;color:#D5D9DB}
+.cb .perks div{display:flex;align-items:center;gap:10px}
+.cb .perks svg{width:19px;height:19px;stroke:#25D366;fill:none;stroke-width:2.6;flex:none}
+.cb .msgr{margin-top:26px}
+.cbform{background:#fff;color:var(--ink);border-radius:18px;padding:26px 24px;box-shadow:0 26px 60px rgba(0,0,0,.4)}
+.cbform h3{font-size:20px;text-transform:uppercase;margin-bottom:5px}
+.cbform .fh{font-size:13px;color:var(--mut);margin-bottom:16px}
+.field{margin-bottom:11px}
+.field input{width:100%;font-family:'Jura';font-size:15px;padding:14px 15px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.field input:focus{outline:none;border-color:var(--red)}
+.cbform .btn{width:100%}
+.policy{font-size:11.5px;color:#8A8F91;margin-top:10px;line-height:1.45}
+.done{display:none;background:#EAF8EF;border:1px solid #BFE7CD;color:#15693C;border-radius:12px;padding:14px 16px;font-size:14px;margin-top:12px}
+.done.on{display:block}
+/* контакты */
+#contacts{padding:84px 0 54px;text-align:center}
+.ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;text-align:left}
+.cc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.cc .cl{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.cc .cv{font-family:'Play';font-weight:700;font-size:22px;margin-top:6px;display:block}
+.cc .cv:hover{color:var(--red)}
+.cc small{display:block;font-size:12.5px;color:var(--mut);margin-top:4px}
+.cc.big{background:var(--red);border-color:var(--red);color:#fff}
+.cc.big .cl,.cc.big small{color:rgba(255,255,255,.8)}
+.cc.big .cv{font-size:38px;color:#fff}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:13px;color:var(--mut)}
+.ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.ft .msgr a{width:36px;height:36px;box-shadow:none}
+.ft .msgr svg{width:18px;height:18px}
+/* плавающие кнопки */
+.fab{position:fixed;right:16px;bottom:16px;z-index:9400;display:flex;flex-direction:column;gap:10px}
+.fab a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.24);transition:.18s}
+.fab a:hover{transform:scale(1.06)}
+.fab svg{width:27px;height:27px;fill:#fff}
+.fab .call{background:var(--red)}
+.fab .w{background:#25D366}
+.fab .t{background:#2AABEE}
+/* модалка */
+.modal{position:fixed;inset:0;z-index:9800;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(8,9,10,.72);backdrop-filter:blur(3px)}
+.modal.on{display:flex}
+.modal .box{background:#fff;border-radius:18px;padding:28px 26px;width:min(430px,100%);position:relative;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.modal .cx{position:absolute;top:12px;right:14px;background:none;border:none;font-size:26px;line-height:1;color:#9AA0A2;cursor:pointer}
+.modal h3{font-size:21px;text-transform:uppercase}
+.modal .mh{font-size:13px;color:var(--mut);margin:5px 0 16px}
+/* адаптив */
+@media(max-width:1080px){
+ nav.main{display:none}.burger{display:block}
+ .hero .wrap{grid-template-columns:1fr;gap:30px;padding-top:44px;padding-bottom:52px}
+ .calc{max-width:460px}
+ .strip .wrap{grid-template-columns:1fr 1fr;gap:18px}
+ .evac{grid-template-columns:1fr;gap:28px}
+ .rgrid{grid-template-columns:repeat(2,1fr)}
+ .prin,.revs{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .cb .wrap{grid-template-columns:1fr;gap:30px;padding:56px 22px}
+ .ccards{grid-template-columns:1fr}
+ .hnums .extra{display:none}
+}
+@media(max-width:640px){
+ .hcta .btn{width:100%}
+ .rgrid,.prin,.revs,.steps,.egrid{grid-template-columns:1fr}
+ .strip .wrap{grid-template-columns:1fr}
+ .topbar .wrap{justify-content:center;text-align:center}
+ .hdr-cta .btn{display:none}
+ .calc{padding:20px 18px}
+ h2{font-size:26px}
+ table.prices{font-size:13.5px}
+ table.prices th,table.prices td{padding:11px 12px}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+ <div class="wrap">
+  <div class="tl">
+   <span><span class="dot"></span>На связи 24/7 — автовоз по РБ и РФ, эвакуатор по Беларуси</span>
+  </div>
+  <div class="tl">
+   <a href="tel:7500">7500 — МТС и А1</a>
+   <a href="tel:+375297477500">+375 29 747-75-00</a>
+   <a href="tel:+79688887500">+7 968 888-75-00</a>
+  </div>
+ </div>
+</div>
+
+<header>
+ <div class="wrap hrow">
+  <a href="#top" class="logo"><div class="lq">E</div><div><b>EVOSTAR</b><span>автовоз РБ — РФ · эвакуатор</span></div></a>
+  <nav class="main">
+   <a href="#avtovoz">Автовоз</a>
+   <a href="#evakuator">Эвакуатор</a>
+   <a href="#marshruty">Маршруты</a>
+   <a href="#pochemy">Почему мы</a>
+   <a href="#otzyvy">Отзывы</a>
+   <a href="#voprosy">Вопросы</a>
+   <a href="#contacts">Контакты</a>
+  </nav>
+  <div class="hdr-cta">
+   <div class="hnums">
+    <a class="short" href="tel:7500">7500 <small>МТС · А1</small></a>
+    <div class="extra">
+     <a href="tel:+375297477500">+375 29 747-75-00</a>
+     <a href="tel:+79688887500">+7 968 888-75-00</a>
+    </div>
+   </div>
+   <button class="btn" data-cb style="padding:13px 22px;font-size:14px">Обратный звонок</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+ </div>
+</header>
+
+<div class="mnav" id="mnav">
+ <button class="mx" id="mx" aria-label="Закрыть">×</button>
+ <a href="#avtovoz">Автовоз РБ — РФ</a>
+ <a href="#evakuator">Эвакуатор 24/7</a>
+ <a href="#marshruty">Маршруты и цены</a>
+ <a href="#pochemy">Почему мы</a>
+ <a href="#otzyvy">Отзывы</a>
+ <a href="#voprosy">Вопросы</a>
+ <a href="#contacts">Контакты</a>
+ <a class="mphone" href="tel:7500">7500</a>
+</div>
+
+<main id="top">
+<section class="hero">
+ <div class="hero-bg"><img src="https://media.base44.com/images/public/6a68473ce306a7e121b74a35/13834fa2a_generated_image.png" alt="Автовоз Evostar с автомобилями на трассе" fetchpriority="high"></div>
+ <div class="wrap">
+  <div>
+   <div class="kick">Evostar — автовоз и эвакуатор</div>
+   <h1>Автовоз <em>РБ — РФ</em> и эвакуатор <em>24/7</em></h1>
+   <p class="hsub">Перевозим легковые авто, кроссоверы, мотоциклы и спецтехнику между Беларусью и Россией <b>без перегонов и пробега</b>. Эвакуатор по Минску и всей Беларуси — подача от 15 минут.</p>
+   <div class="hfacts">
+    <span><b>15 мин</b> подача эвакуатора</span>
+    <span><b>1–3 дня</b> доставка автовозом</span>
+    <span><b>24/7</b> без выходных</span>
+   </div>
+   <div class="hcta">
+    <a class="btn btn-lg" href="tel:7500">Позвонить: 7500</a>
+    <a class="btn btn-o btn-lg" href="https://wa.me/375297477500" target="_blank" rel="noopener">Написать в WhatsApp</a>
+   </div>
+   <div class="msgr">
+    <span class="lbl">Мы в мессенджерах:</span>
+    <a class="v" href="viber://chat?number=%2B375297477500" aria-label="Viber"><svg viewBox="0 0 24 24"><path d="M11.4 0C8.6.1 5.4.5 3.6 2.2 2.2 3.6 1.5 5.9 1.4 8.7c-.1 2.8.1 5.6 1.9 7.4.9.9 2.3 1.5 3.9 1.8v3.1c0 .4.5.6.8.2l2.6-3.1c2.2 0 4.3-.3 5.7-1 1.9-.9 2.6-2.6 2.7-4.8.1-2.1.1-4.3-.1-6.5-.2-2-1.1-3.6-2.8-4.6C14.9.5 13.2.1 11.4 0zm.3 1.8c1.6.1 3 .4 3.9 1.2 1.2.8 1.7 1.9 1.9 3.5.2 2 .2 4.1.1 6.1-.1 1.8-.6 2.9-1.9 3.6-1.1.6-3.2.9-5.5.8-.2 0-.4.1-.5.3l-1.9 2.3v-2.4c0-.3-.2-.5-.5-.5-1.5-.2-2.8-.6-3.5-1.3-1.3-1.3-1.5-3.6-1.4-6.1.1-2.4.6-4.2 1.7-5.3 1.4-1.4 4.1-1.9 7.6-1.9zm-2.9 3c-.3 0-.9.1-1.2.6-.4.5-1.3 1.5-1.3 2.8 0 1.3 1 2.7 1.3 3.1.3.4 2.1 3.4 5.3 4.6 2.7 1 3.2.8 3.8.7.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.5-.4-.5-.6-.5h-.1zm4.4.6c-.3 0-.5.2-.5.5s.2.5.5.5c1.3 0 2.4 1.1 2.5 2.4 0 .3.2.5.5.5s.5-.2.5-.5c-.1-1.9-1.6-3.4-3.5-3.4zm.1 1.9c-.3 0-.5.2-.5.5s.2.5.5.5c.6 0 1.1.5 1.1 1.1 0 .3.2.5.5.5s.5-.2.5-.5c0-1.2-.9-2.1-2.1-2.1z"/></svg></a>
+    <a class="w" href="https://wa.me/375297477500" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 0112 3.8zm-3.7 4c-.2 0-.5.1-.7.4-.3.3-.9 1-.9 2s.7 2 .8 2.2c.1.1 1.4 2.3 3.5 3.2 1.7.7 2.1.6 2.5.6.4 0 1.3-.5 1.5-1s.2-1 .2-1.1c-.1-.1-.2-.2-.5-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.1-1.3-1.3-1.5-.1-.2 0-.3.1-.4l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4l-.6-1.6c-.2-.4-.4-.4-.6-.4h-.4z"/></svg></a>
+    <a class="t" href="https://t.me/+375297477500" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3c-.2-.2-.5-.3-.9-.1L2.7 11.1c-.6.2-.6 1 0 1.2l4.6 1.4 1.7 5.3c.1.4.6.6.9.3l2.6-2.4 4.6 3.4c.4.3.9.1 1-.4l3.4-14.6c.1-.3 0-.7-.2-1zM8.7 13.5l8.9-5.6c.3-.2.6.2.3.4l-7.3 6.6-.3 2.9-1.6-4.3z"/></svg></a>
+    <a class="i" href="https://www.instagram.com/evostar.by" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.5.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .5 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.5 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.5-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.5-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.5-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.5 1.3-.1 1.7-.1 4.7-.1zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.5.2-1.8.4-.5.2-.8.4-1 .7-.3.3-.5.5-.7 1-.1.3-.3.8-.4 1.8-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.5.4 1.8.2.5.4.8.7 1 .3.3.5.5 1 .7.3.1.8.3 1.8.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.5-.2 1.8-.4.5-.2.8-.4 1-.7.3-.3.5-.5.7-1 .1-.3.3-.8.4-1.8.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.5-.4-1.8-.2-.5-.4-.8-.7-1-.3-.3-.5-.5-1-.7-.3-.1-.8-.3-1.8-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a5 5 0 110 10 5 5 0 010-10zm0 1.8a3.2 3.2 0 100 6.4 3.2 3.2 0 000-6.4zm5.2-3.2a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
+    <a class="e" href="mailto:info@evostar.by" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1.6 2L12 12.4 19.4 7H4.6zM20 8.9l-7.4 5.4a1 1 0 01-1.2 0L4 8.9V17h16V8.9z"/></svg></a>
+   </div>
+  </div>
+
+  <aside class="calc" aria-label="Расчёт стоимости перевозки">
+   <h3>Расчёт стоимости</h3>
+   <p class="chint">Ориентир за 5 секунд. Точную цену назовём по телефону.</p>
+   <label for="cType">Тип транспорта</label>
+   <select id="cType">
+    <option value="1" data-k="1">Легковой автомобиль</option>
+    <option value="1.15" data-k="1.15">Кроссовер / внедорожник</option>
+    <option value="1.3" data-k="1.3">Микроавтобус</option>
+    <option value="0.6" data-k="0.6">Мотоцикл / квадроцикл</option>
+    <option value="1.25" data-k="1.25">Не на ходу (лебёдка)</option>
+   </select>
+   <div class="two">
+    <div>
+     <label for="cFrom">Откуда</label>
+     <select id="cFrom"></select>
+    </div>
+    <div>
+     <label for="cTo">Куда</label>
+     <select id="cTo"></select>
+    </div>
+   </div>
+   <div class="sum">
+    <span>Предварительно<br>за автовоз</span>
+    <b id="cSum">—</b>
+   </div>
+   <p class="cnote">Расчёт ориентировочный: зависит от габаритов, загрузки автовоза и точного адреса. Эвакуатор по Минску — от 90 BYN.</p>
+   <button class="btn" data-cb>Заказать звонок</button>
+  </aside>
+ </div>
+</section>
+
+<div class="strip">
+ <div class="wrap">
+  <div class="st-it"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><div><b>24/7 и без выходных</b><span>Автовоз и эвакуатор в любое время</span></div></div>
+  <div class="st-it"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.2-3 7-7 9-4-2-7-4.8-7-9V6z"/><path d="M9.2 12.2l2 2 3.6-4.2"/></svg><div><b>Крепление по нормам</b><span>Ремни на колёса и кузов, фото до выезда</span></div></div>
+  <div class="st-it"><svg viewBox="0 0 24 24"><path d="M3 15l2-7h14l2 7v4h-2v-2H5v2H3z"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg><div><b>Свои автовозы</b><span>Не перекупаем заказы у других перевозчиков</span></div></div>
+  <div class="st-it"><svg viewBox="0 0 24 24"><path d="M4 20V6a2 2 0 012-2h8l6 6v10z"/><path d="M9 12h6M9 16h6"/></svg><div><b>Документы для юрлиц</b><span>Счета, акты, полный пакет для отчётности</span></div></div>
+ </div>
+</div>
+
+<section class="blk" id="avtovoz">
+ <div class="wrap">
+  <div class="shead">
+   <div>
+    <div class="kick">01 — Автовоз</div>
+    <h2>Перевозка автомобилей РБ — РФ</h2>
+    <p class="lead">Двухъярусный автовоз, до четырёх машин за рейс. Базовые коридоры с ответными рейсами, поэтому место есть почти всегда. Срок доставки — обычно от одного до трёх дней.</p>
+   </div>
+   <button class="btn btn-d" data-cb>Узнать ближайший рейс</button>
+  </div>
+  <div class="rgrid" id="marshruty">
+   <div class="rt"><div class="ar">Минск <i>→</i> Москва</div><span>и обратно, рейсы каждую неделю</span></div>
+   <div class="rt"><div class="ar">Витебск <i>→</i> Москва</div><span>и обратно, регулярный маршрут</span></div>
+   <div class="rt"><div class="ar">Минск <i>→</i> Санкт-Петербург</div><span>и обратно</span></div>
+   <div class="rt"><div class="ar">Витебск <i>→</i> Санкт-Петербург</div><span>и обратно</span></div>
+   <div class="rt"><div class="ar">Гомель <i>→</i> Москва</div><span>и обратно</span></div>
+   <div class="rt"><div class="ar">Минск <i>→</i> Казань</div><span>и другие города РФ</span></div>
+   <div class="rt"><div class="ar">Брест <i>→</i> Москва</div><span>и обратно</span></div>
+   <div class="rt" style="background:var(--ink);border-color:var(--ink)"><div class="ar" style="color:#fff">Любой город <i>→</i> любой</div><span style="color:#A9AEB0">попросите — предложим ближайший рейс</span></div>
+  </div>
+
+  <table class="prices">
+   <thead><tr><th>Маршрут</th><th>Срок</th><th>Ориентир за авто</th></tr></thead>
+   <tbody>
+    <tr><td>Минск — Москва и обратно</td><td>1–2 дня</td><td>от 300 у.е.</td></tr>
+    <tr><td>Витебск — Москва и обратно</td><td>1–2 дня</td><td>от 300 у.е.</td></tr>
+    <tr><td>Минск — Санкт-Петербург</td><td>2–3 дня</td><td>от 320 у.е.</td></tr>
+    <tr><td>Гомель — Москва</td><td>1–2 дня</td><td>от 320 у.е.</td></tr>
+    <tr><td>Минск — Нижний Новгород</td><td>2–3 дня</td><td>от 400 у.е.</td></tr>
+    <tr><td>Минск — Казань</td><td>3 дня</td><td>от 480 у.е.</td></tr>
+    <tr><td>Минск — Краснодар</td><td>3–4 дня</td><td>от 550 у.е.</td></tr>
+   </tbody>
+  </table>
+  <p class="cnote" style="margin-top:12px">Цены ориентировочные, окончательная стоимость — после уточнения маршрута, габаритов и загрузки автовоза.</p>
+ </div>
+</section>
+
+<section class="blk soft" id="evakuator">
+ <div class="wrap">
+  <div class="evac">
+   <div>
+    <div class="kick">02 — Эвакуатор</div>
+    <h2>Эвакуатор 24/7 по Минску и Беларуси</h2>
+    <p class="lead">Забрать машину после ДТП, вытащить с парковки, перевезти не на ходу или доставить на СТО. Полная погрузка, подкатные тележки, лебёдка. Подача от 15 минут по городу.</p>
+    <div class="egrid">
+     <div class="eg"><b>Легковые авто</b><span>полная погрузка, ремни на колёса</span></div>
+     <div class="eg"><b>Кроссоверы и внедорожники</b><span>усиленная платформа, лебёдка</span></div>
+     <div class="eg"><b>Мотоциклы</b><span>стойка и ремни, вертикально</span></div>
+     <div class="eg"><b>Микроавтобусы</b><span>до 3,5 тонны</span></div>
+     <div class="eg"><b>После ДТП, колёса заблокированы</b><span>подкатные тележки</span></div>
+     <div class="eg"><b>Внедорожная эвакуация</b><span>поле, грунт, снег, грязь</span></div>
+     <div class="eg wide"><b>Техпомощь на дороге</b><span>подвоз топлива, прикурить, замена колеса, запуск двигателя 12V</span></div>
+    </div>
+    <div class="hcta" style="margin-top:22px">
+     <a class="btn" href="tel:7500">Вызвать эвакуатор: 7500</a>
+     <a class="btn btn-d" href="https://wa.me/375297477500" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+   </div>
+   <div class="evac-img">
+    <div class="badge">Подача от 15 минут</div>
+    <img src="https://media.base44.com/images/public/6a68473ce306a7e121b74a35/f0854893d_generated_image.png" alt="Эвакуатор Evostar с погруженным автомобилем">
+   </div>
+  </div>
+
+  <table class="prices">
+   <thead><tr><th>Услуга эвакуатора</th><th>Что входит</th><th>Цена</th></tr></thead>
+   <tbody>
+    <tr><td>Легковой автомобиль по Минску</td><td>погрузка, крепление, доставка в черте города</td><td>от 90 BYN</td></tr>
+    <tr><td>Кроссовер / внедорожник</td><td>усиленная платформа, лебёдка при необходимости</td><td>от 110 BYN</td></tr>
+    <tr><td>Мотоцикл / квадроцикл</td><td>стойка, ремни, вертикальная перевозка</td><td>от 80 BYN</td></tr>
+    <tr><td>Микроавтобус до 3,5 т</td><td>полная погрузка</td><td>от 140 BYN</td></tr>
+    <tr><td>Авто с заблокированными колёсами</td><td>подкатные тележки, аккуратная погрузка</td><td>от 120 BYN</td></tr>
+    <tr><td>За городом / межгород</td><td>цена за километр сверх городского тарифа</td><td>от 2 BYN/км</td></tr>
+    <tr><td>Техпомощь на дороге</td><td>топливо, прикурить, колесо</td><td>от 40 BYN</td></tr>
+   </tbody>
+  </table>
+  <p class="cnote" style="margin-top:12px">Работаем с физлицами и юрлицами: чек, договор, акт — для страховой и отчётности.</p>
+ </div>
+</section>
+
+<section class="blk">
+ <div class="wrap">
+  <div class="kick">03 — Как работаем</div>
+  <h2>Четыре шага от звонка до выдачи</h2>
+  <div class="steps">
+   <div class="stp"><div class="sn">1</div><b>Звонок или заявка</b><p>Скажите, откуда, куда и что везём: марка, габариты, на ходу или нет.</p></div>
+   <div class="stp"><div class="sn">2</div><b>Расчёт и дата</b><p>Называем цену и ближайший рейс. Эвакуатор — время подачи.</p></div>
+   <div class="stp"><div class="sn">3</div><b>Погрузка</b><p>Осматриваем, грузим, крепим, фотографируем до закрытия бортов.</p></div>
+   <div class="stp"><div class="sn">4</div><b>Доставка и выдача</b><p>Водитель на связи, выдаём с совместным осмотром и документами.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="blk soft" id="pochemy">
+ <div class="wrap">
+  <div class="kick">04 — Почему мы</div>
+  <h2>Шесть причин доверить машину</h2>
+  <div class="prin">
+   <div class="pbox"><div class="n">1</div><b>Без пробега и перегонов</b><p>Машина едет на автовозе — одометр остаётся прежним, ресурс и история не страдают.</p></div>
+   <div class="pbox"><div class="n">2</div><b>Крепление по нормам</b><p>Фиксируем колёса и кузов, проверяем крепления перед выездом и на стоянках в пути.</p></div>
+   <div class="pbox"><div class="n">3</div><b>Свои автовозы и эвакуаторы</b><p>Не перекупаем заказы: машину грузит тот же перевозчик, с которым вы говорили.</p></div>
+   <div class="pbox"><div class="n">4</div><b>Связь с водителем</b><p>Диспетчер на связи весь рейс: скажем, где машина, и предупредим о подаче заранее.</p></div>
+   <div class="pbox"><div class="n">5</div><b>Осмотр при выдаче</b><p>Принимаете автомобиль лично: осматриваете вместе с водителем до подписания документов.</p></div>
+   <div class="pbox"><div class="n">6</div><b>Наличный и безналичный</b><p>Физлицам и юрлицам. Полный пакет документов — по запросу, в том числе для страховой.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="blk" id="otzyvy">
+ <div class="wrap">
+  <div class="kick">05 — Отзывы</div>
+  <h2>Что говорят клиенты</h2>
+  <div class="revs">
+   <div class="rev"><div class="st">★★★★★</div><p>Гнали машину из Минска в Москву. Погрузили при мне, всё сфотографировали, на трассе держали в курсе. При выдаче ни одной царапины.</p><div class="au"><div class="av">А</div><div><b>Андрей</b><span>Минск → Москва, кроссовер</span></div></div></div>
+   <div class="rev"><div class="st">★★★★★</div><p>Эвакуатор приехал через 20 минут после звонка, хотя был вечер и дождь. Колёса были заблокированы после ДТП, затащили тележками аккуратно.</p><div class="au"><div class="av">М</div><div><b>Марина</b><span>Минск, эвакуация после ДТП</span></div></div></div>
+   <div class="rev"><div class="st">★★★★★</div><p>Отправляли два мотоцикла в Витебск. Стойки, ремни, всё по уму. Позвонили на короткий номер, через десять минут уже знали цену и дату.</p><div class="au"><div class="av">С</div><div><b>Сергей</b><span>Минск → Витебск, мото</span></div></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="blk soft" id="voprosy">
+ <div class="wrap">
+  <div class="kick">06 — Вопросы</div>
+  <h2>Частые вопросы</h2>
+  <div class="faq" style="margin-top:32px">
+   <details open><summary>Сколько стоит перевозка автовозом?<span class="pl">+</span></summary><div class="fa">Зависит от маршрута, типа авто и загрузки автовоза. Ориентиры есть в таблице выше, точную цену назовём по телефону за пару минут — без «примерных» доплат потом.</div></details>
+   <details><summary>Как быстро приедет эвакуатор?<span class="pl">+</span></summary><div class="fa">По Минску — обычно 15–30 минут. За городом и в области время зависит от расстояния, называем сразу при звонке. Работаем круглосуточно.</div></details>
+   <details><summary>Машина не на ходу — заберёте?<span class="pl">+</span></summary><div class="fa">Да. После ДТП, с заблокированными колёсами или без хода: погрузим лебёдкой и подкатными тележками. Скажите об этом при заказе, чтобы водитель приехал с оборудованием.</div></details>
+   <details><summary>Какие документы нужны?<span class="pl">+</span></summary><div class="fa">Паспорт или права и документ на автомобиль. Если отправляет не владелец — доверенность. Для юрлиц — стандартный пакет, подскажем при оформлении.</div></details>
+   <details><summary>Можно ли оставить вещи в машине?<span class="pl">+</span></summary><div class="fa">Небольшие вещи в салоне — по согласованию. Ценности лучше забрать: автовоз не отвечает за содержимое салона.</div></details>
+   <details><summary>Возим ли мы в обратную сторону, из России?<span class="pl">+</span></summary><div class="fa">Да, у базовых маршрутов есть ответные рейсы. Скажите город — подберём ближайшую загрузку в нужную сторону.</div></details>
+   <details><summary>Как оплатить?<span class="pl">+</span></summary><div class="fa">Наличными при выдаче, по согласованной предоплате или безналично для юрлиц. Документы выдаём на месте.</div></details>
+  </div>
+ </div>
+</section>
+
+<section class="cb" id="callback">
+ <div class="wrap">
+  <div>
+   <div class="kick" style="color:#FF5A67">Обратный звонок</div>
+   <h2 style="color:#fff">Перезвоним за 15 минут</h2>
+   <p>Оставьте имя и телефон — диспетчер наберёт, посчитает стоимость и скажет ближайший рейс. Без навязывания и звонков «просто так».</p>
+   <div class="perks">
+    <div><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Считаем цену по вашему маршруту, а не «среднюю по сайту»</div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Скажем сразу, есть ли место на ближайшем автовозе</div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Эвакуатор — назовём точное время подачи</div>
+   </div>
+   <div class="msgr">
+    <span class="lbl">Или напишите:</span>
+    <a class="v" href="viber://chat?number=%2B375297477500" aria-label="Viber"><svg viewBox="0 0 24 24"><path d="M11.4 0C8.6.1 5.4.5 3.6 2.2 2.2 3.6 1.5 5.9 1.4 8.7c-.1 2.8.1 5.6 1.9 7.4.9.9 2.3 1.5 3.9 1.8v3.1c0 .4.5.6.8.2l2.6-3.1c2.2 0 4.3-.3 5.7-1 1.9-.9 2.6-2.6 2.7-4.8.1-2.1.1-4.3-.1-6.5-.2-2-1.1-3.6-2.8-4.6C14.9.5 13.2.1 11.4 0z"/></svg></a>
+    <a class="w" href="https://wa.me/375297477500" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 0112 3.8z"/></svg></a>
+    <a class="t" href="https://t.me/+375297477500" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3c-.2-.2-.5-.3-.9-.1L2.7 11.1c-.6.2-.6 1 0 1.2l4.6 1.4 1.7 5.3c.1.4.6.6.9.3l2.6-2.4 4.6 3.4c.4.3.9.1 1-.4l3.4-14.6c.1-.3 0-.7-.2-1z"/></svg></a>
+    <a class="e" href="mailto:info@evostar.by" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg></a>
+   </div>
+  </div>
+
+  <form class="cbform" id="cbForm" novalidate>
+   <h3>Оставить заявку</h3>
+   <p class="fh">Перезвоним в течение 15 минут в рабочее время</p>
+   <div class="field"><input type="text" name="name" id="cbName" placeholder="Ваше имя" autocomplete="name"></div>
+   <div class="field"><input type="tel" name="phone" id="cbPhone" placeholder="+375 __ ___-__-__" autocomplete="tel" required></div>
+   <div class="field"><input type="text" name="task" id="cbTask" placeholder="Что везём и куда (необязательно)"></div>
+   <button class="btn" type="submit">Жду звонка</button>
+   <p class="policy">Нажимая кнопку, вы соглашаетесь на обработку телефона для обратного звонка. Данные третьим лицам не передаём.</p>
+   <div class="done" id="cbDone">Готово: откроется WhatsApp с текстом заявки — отправьте его, и мы перезвоним.</div>
+  </form>
+ </div>
+</section>
+
+<section id="contacts">
+ <div class="wrap">
+  <div class="kick" style="justify-content:center">Контакты</div>
+  <h2 style="margin:0 auto">Позвоните — ответим сразу</h2>
+  <p class="lead" style="margin:14px auto 0">Короткий номер для Беларуси, прямой номер для России и мессенджеры. Круглосуточно.</p>
+  <div class="ccards">
+   <a class="cc big" href="tel:7500"><span class="cl">Короткий номер</span><span class="cv">7500</span><small>МТС и А1 · бесплатно с мобильного РБ</small></a>
+   <a class="cc" href="tel:+375297477500"><span class="cl">Беларусь</span><span class="cv">+375 29 747-75-00</span><small>звонки и WhatsApp</small></a>
+   <a class="cc" href="tel:+79688887500"><span class="cl">Россия</span><span class="cv">+7 968 888-75-00</span><small>для звонков из РФ</small></a>
+  </div>
+  <div class="msgr" style="justify-content:center;margin-top:26px">
+   <a class="v" href="viber://chat?number=%2B375297477500" aria-label="Viber"><svg viewBox="0 0 24 24"><path d="M11.4 0C8.6.1 5.4.5 3.6 2.2 2.2 3.6 1.5 5.9 1.4 8.7c-.1 2.8.1 5.6 1.9 7.4.9.9 2.3 1.5 3.9 1.8v3.1c0 .4.5.6.8.2l2.6-3.1c2.2 0 4.3-.3 5.7-1 1.9-.9 2.6-2.6 2.7-4.8.1-2.1.1-4.3-.1-6.5-.2-2-1.1-3.6-2.8-4.6C14.9.5 13.2.1 11.4 0z"/></svg></a>
+   <a class="w" href="https://wa.me/375297477500" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2z"/></svg></a>
+   <a class="t" href="https://t.me/+375297477500" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3c-.2-.2-.5-.3-.9-.1L2.7 11.1c-.6.2-.6 1 0 1.2l4.6 1.4 1.7 5.3c.1.4.6.6.9.3l2.6-2.4 4.6 3.4c.4.3.9.1 1-.4l3.4-14.6c.1-.3 0-.7-.2-1z"/></svg></a>
+   <a class="i" href="https://www.instagram.com/evostar.by" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.5.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .5 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.5 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.5-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.5-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.5-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.5 1.3-.1 1.7-.1 4.7-.1zm0 4.9a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.2-3.2a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
+   <a class="e" href="mailto:info@evostar.by" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg></a>
+  </div>
+  <div class="cty" style="color:var(--mut);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-top:24px">автовоз РБ — РФ · эвакуатор 24/7 · evostar.by</div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap ft">
+  <span>© 2026 evostar.by · автовоз РБ — РФ, эвакуатор</span>
+  <div class="msgr">
+   <a class="v" href="viber://chat?number=%2B375297477500" aria-label="Viber"><svg viewBox="0 0 24 24"><path d="M11.4 0C8.6.1 5.4.5 3.6 2.2 2.2 3.6 1.5 5.9 1.4 8.7c-.1 2.8.1 5.6 1.9 7.4.9.9 2.3 1.5 3.9 1.8v3.1c0 .4.5.6.8.2l2.6-3.1c2.2 0 4.3-.3 5.7-1 1.9-.9 2.6-2.6 2.7-4.8.1-2.1.1-4.3-.1-6.5-.2-2-1.1-3.6-2.8-4.6C14.9.5 13.2.1 11.4 0z"/></svg></a>
+   <a class="w" href="https://wa.me/375297477500" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2z"/></svg></a>
+   <a class="t" href="https://t.me/+375297477500" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3c-.2-.2-.5-.3-.9-.1L2.7 11.1c-.6.2-.6 1 0 1.2l4.6 1.4 1.7 5.3c.1.4.6.6.9.3l2.6-2.4 4.6 3.4c.4.3.9.1 1-.4l3.4-14.6c.1-.3 0-.7-.2-1z"/></svg></a>
+   <a class="e" href="mailto:info@evostar.by" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg></a>
+  </div>
+  <span>7500 · +375 29 747-75-00 · +7 968 888-75-00</span>
+ </div>
+</footer>
+
+<div class="fab">
+ <a class="call" href="tel:7500" aria-label="Позвонить 7500"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.1 2.2 2.9 4 5.1 5.1l1.7-1.7c.2-.2.6-.3.9-.2 1 .3 2 .5 3.1.5.5 0 .9.4.9.9V19c0 .5-.4.9-.9.9C9.6 19.9 4.1 14.4 4.1 7.5c0-.5.4-.9.9-.9h3.6c.5 0 .9.4.9.9 0 1.1.2 2.1.5 3.1.1.3 0 .7-.2.9l-1.2 1.3z"/></svg></a>
+ <a class="w" href="https://wa.me/375297477500" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2z"/></svg></a>
+ <a class="t" href="https://t.me/+375297477500" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3c-.2-.2-.5-.3-.9-.1L2.7 11.1c-.6.2-.6 1 0 1.2l4.6 1.4 1.7 5.3c.1.4.6.6.9.3l2.6-2.4 4.6 3.4c.4.3.9.1 1-.4l3.4-14.6c.1-.3 0-.7-.2-1z"/></svg></a>
+</div>
+
+<div class="modal" id="cbModal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+ <div class="box">
+  <button class="cx" id="mClose" aria-label="Закрыть">×</button>
+  <h3 id="mTitle">Обратный звонок</h3>
+  <p class="mh">Оставьте телефон — перезвоним за 15 минут и посчитаем стоимость.</p>
+  <form id="mForm" novalidate>
+   <div class="field"><input type="text" id="mName" placeholder="Ваше имя" autocomplete="name"></div>
+   <div class="field"><input type="tel" id="mPhone" placeholder="+375 __ ___-__-__" autocomplete="tel" required></div>
+   <button class="btn" type="submit">Жду звонка</button>
+   <p class="policy">Данные используем только для обратного звонка.</p>
+   <div class="done" id="mDone">Готово: откроется WhatsApp с текстом заявки — отправьте его, и мы перезвоним.</div>
+  </form>
+ </div>
+</div>
+
+<script>
+document.body.classList.add('js');
+var WA='375297477500';
+(function(){
+  /* меню */
+  var b=document.getElementById('burger'),m=document.getElementById('mnav');
+  if(b){b.addEventListener('click',function(){m.classList.add('on')});}
+  var mx=document.getElementById('mx');
+  if(mx){mx.addEventListener('click',function(){m.classList.remove('on')});}
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('on')})});
+
+  /* модалка обратного звонка */
+  var modal=document.getElementById('cbModal');
+  function openM(){modal.classList.add('on');setTimeout(function(){document.getElementById('mPhone').focus()},120);}
+  function closeM(){modal.classList.remove('on');}
+  document.querySelectorAll('[data-cb]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openM();});});
+  document.getElementById('mClose').addEventListener('click',closeM);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+
+  /* отправка заявки -> WhatsApp (без бэкенда) */
+  function send(name,phone,task,doneEl){
+    var txt='Заявка на обратный звонок Evostar.%0AИмя: '+(name||'не указано')+'%0AТелефон: '+phone+(task?'%0AЗадача: '+task:'');
+    window.open('https://wa.me/'+WA+'?text='+txt,'_blank');
+    doneEl.classList.add('on');
+  }
+  var f1=document.getElementById('cbForm');
+  f1.addEventListener('submit',function(e){
+    e.preventDefault();
+    var p=document.getElementById('cbPhone').value.trim();
+    if(p.replace(/\D/g,'').length<9){document.getElementById('cbPhone').focus();return;}
+    send(document.getElementById('cbName').value.trim(),p,document.getElementById('cbTask').value.trim(),document.getElementById('cbDone'));
+  });
+  var f2=document.getElementById('mForm');
+  f2.addEventListener('submit',function(e){
+    e.preventDefault();
+    var p=document.getElementById('mPhone').value.trim();
+    if(p.replace(/\D/g,'').length<9){document.getElementById('mPhone').focus();return;}
+    send(document.getElementById('mName').value.trim(),p,'',document.getElementById('mDone'));
+    setTimeout(closeM,2200);
+  });
+
+  /* калькулятор */
+  var CITY={
+    'Минск':0,'Витебск':280,'Гомель':300,'Брест':350,'Гродно':280,'Могилёв':200,'Бобруйск':150,'Барановичи':140,'Борисов':75,'Орша':220,
+    'Москва':720,'Санкт-Петербург':790,'Смоленск':420,'Брянск':600,'Тверь':780,'Нижний Новгород':1120,'Казань':1500,'Воронеж':1050,'Ростов-на-Дону':1500,'Краснодар':1700,'Псков':620,'Великие Луки':420
+  };
+  var RB=['Минск','Витебск','Гомель','Брест','Гродно','Могилёв','Бобруйск','Барановичи','Борисов','Орша'];
+  var RF=['Москва','Санкт-Петербург','Смоленск','Брянск','Тверь','Псков','Великие Луки','Нижний Новгород','Казань','Воронеж','Ростов-на-Дону','Краснодар'];
+  var sFrom=document.getElementById('cFrom'),sTo=document.getElementById('cTo');
+  RB.forEach(function(c){sFrom.insertAdjacentHTML('beforeend','<option>'+c+'</option>');});
+  RF.forEach(function(c){sTo.insertAdjacentHTML('beforeend','<option>'+c+'</option>');});
+  sFrom.value='Минск';sTo.value='Москва';
+  function dist(a,b){
+    var da=CITY[a]||0,db=CITY[b]||0;
+    if(RF.indexOf(b)>=0&&RB.indexOf(a)>=0) return Math.max(250,db+Math.max(0,(da-0))*0.8);
+    if(RF.indexOf(a)>=0&&RB.indexOf(b)>=0) return Math.max(250,da+Math.max(0,(db-0))*0.8);
+    return Math.abs(da-db)||300;
+  }
+  function fmt(n){return n.toLocaleString('ru-RU');}
+  function calc(){
+    var k=parseFloat(document.getElementById('cType').value)||1;
+    var d=dist(sFrom.value,sTo.value);
+    var usd=Math.round((120+0.25*d)*k/10)*10;
+    document.getElementById('cSum').textContent='≈ '+fmt(usd)+' у.е.';
+  }
+  ['cType','cFrom','cTo'].forEach(function(id){document.getElementById(id).addEventListener('change',calc);});
+  calc();
+})();
+</script>
+</body>
+</html>
