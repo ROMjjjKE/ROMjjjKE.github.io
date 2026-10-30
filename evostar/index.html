@@ -519,8 +519,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:13px;color:var(
    <div class="field"><input type="tel" name="phone" id="cbPhone" placeholder="+375 __ ___-__-__" autocomplete="tel" required></div>
    <div class="field"><input type="text" name="task" id="cbTask" placeholder="Что везём и куда (необязательно)"></div>
    <button class="btn" type="submit">Жду звонка</button>
-   <p class="policy">Нажимая кнопку, вы соглашаетесь на обработку телефона для обратного звонка. Данные третьим лицам не передаём.</p>
-   <div class="done" id="cbDone">Готово: откроется WhatsApp с текстом заявки — отправьте его, и мы перезвоним.</div>
+   <p class="policy">Нажимая кнопку, вы соглашаетесь на обработку телефона для обратного звонка. Заявка приходит на почту, данные третьим лицам не передаём.</p>
+   <div class="done" id="cbDone"></div>
   </form>
  </div>
 </section>
@@ -576,7 +576,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:13px;color:var(
    <div class="field"><input type="tel" id="mPhone" placeholder="+375 __ ___-__-__" autocomplete="tel" required></div>
    <button class="btn" type="submit">Жду звонка</button>
    <p class="policy">Данные используем только для обратного звонка.</p>
-   <div class="done" id="mDone">Готово: откроется WhatsApp с текстом заявки — отправьте его, и мы перезвоним.</div>
+   <div class="done" id="mDone"></div>
   </form>
  </div>
 </div>
@@ -601,26 +601,64 @@ var WA='375297477500';
   modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
 
-  /* отправка заявки -> WhatsApp (без бэкенда) */
-  function send(name,phone,task,doneEl){
-    var txt='Заявка на обратный звонок Evostar.%0AИмя: '+(name||'не указано')+'%0AТелефон: '+phone+(task?'%0AЗадача: '+task:'');
-    window.open('https://wa.me/'+WA+'?text='+txt,'_blank');
-    doneEl.classList.add('on');
+  /* ── отправка заявки на почту ──
+     MAIL_TO — куда приходят заявки.
+     WEB3FORMS_KEY — если вписать ключ с web3forms.com, заявка уйдёт на почту
+     сразу, без участия клиента (AJAX). Пока ключа нет — открывается готовое
+     письмо в почтовом клиенте клиента на этот же адрес. */
+  var MAIL_TO='info@evostar.by';
+  var WEB3FORMS_KEY='';
+  function leadBody(name,phone,task){
+    return 'Имя: '+(name||'не указано')+'\nТелефон: '+phone+(task?'\nЗадача: '+task:'')+'\nСтраница: '+location.href;
+  }
+  function postLead(name,phone,task,doneEl){
+    if(WEB3FORMS_KEY){
+      doneEl.className='done';
+      doneEl.textContent='Отправляем заявку…';
+      fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          access_key:WEB3FORMS_KEY,
+          subject:'Заявка с сайта evostar.by: '+(name||'без имени'),
+          from_name:'Сайт evostar.by',
+          Имя:name||'не указано', Телефон:phone, Задача:task||'не указана', Страница:location.href
+        })
+      }).then(function(r){return r.json();}).then(function(res){
+        if(res&&res.success){throw 0;} // успех
+        throw new Error('fail');
+      }).then(function(){
+        throw new Error('unreachable');
+      }).catch(function(err){
+        if(err===0){
+          doneEl.className='done on';
+          doneEl.innerHTML='Заявка отправлена. Перезвоним в течение 15 минут.<br>Если срочно — <a href="tel:7500" style="color:#15693C;font-weight:700">7500</a>.';
+        }else{
+          doneEl.className='done on';
+          doneEl.innerHTML='Не удалось отправить. Позвоните на <a href="tel:7500" style="color:#15693C;font-weight:700">7500</a>.';
+        }
+      });
+      return;
+    }
+    /* без ключа — готовое письмо в почте клиента */
+    var subj='Заявка с сайта evostar.by: '+(name||'без имени');
+    location.href='mailto:'+MAIL_TO+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(leadBody(name,phone,task));
+    doneEl.className='done on';
+    doneEl.innerHTML='Открыли письмо в вашей почте — осталось нажать «Отправить». Если не открылось, позвоните: <a href="tel:7500" style="color:#15693C;font-weight:700">7500</a>.';
   }
   var f1=document.getElementById('cbForm');
   f1.addEventListener('submit',function(e){
     e.preventDefault();
     var p=document.getElementById('cbPhone').value.trim();
     if(p.replace(/\D/g,'').length<9){document.getElementById('cbPhone').focus();return;}
-    send(document.getElementById('cbName').value.trim(),p,document.getElementById('cbTask').value.trim(),document.getElementById('cbDone'));
+    postLead(document.getElementById('cbName').value.trim(),p,document.getElementById('cbTask').value.trim(),document.getElementById('cbDone'));
   });
   var f2=document.getElementById('mForm');
   f2.addEventListener('submit',function(e){
     e.preventDefault();
     var p=document.getElementById('mPhone').value.trim();
     if(p.replace(/\D/g,'').length<9){document.getElementById('mPhone').focus();return;}
-    send(document.getElementById('mName').value.trim(),p,'',document.getElementById('mDone'));
-    setTimeout(closeM,2200);
+    postLead(document.getElementById('mName').value.trim(),p,'',document.getElementById('mDone'));
   });
 
   /* калькулятор */
